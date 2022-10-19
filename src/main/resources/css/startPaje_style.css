@@ -1,0 +1,141 @@
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* элементы по центру */
+    min-width: 900px;
+    position: relative;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* закрепить сверху-слева */
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    /* для ровной картинки */
+}
+
+a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    font-size: 5rem;
+    color: #fff;
+}
+
+button {
+    border-radius: 30px;
+    background-image:url("../images/NewText.jpg");
+    background-position: center top;
+    background-size: cover;
+    position: relative;
+    bottom: 50px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    border: none;
+    transition: 0.3s;
+
+}
+input{
+    position: relative;
+    top:98px;
+    display: none;
+}
+/*при наведении на кнопку*/
+button:hover{
+    position: relative;
+    height: 150%;
+    transition: 0.3s;
+    bottom: 40px;
+    transform: translateX(10px);
+    box-shadow: -10px -10px 3px #201c1f;
+}
+button:hover input{
+    display: inline;
+}
+/*При нажатии на кнопку*/
+button:active{
+    transform: translateY(0px);
+    bottom: 50px;
+    box-shadow: none;
+    transition: none;
+}
+a img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* закрепить сверху-слева */
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    /* для ровной картинки */
+
+    border-radius: 30px;
+}
+
+.button_body {
+    background-color: #000;
+    z-index: 3;
+    /* приоритет = 10 */
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+    /*border: 2px solid #000;*/
+}
+
+.general {
+    text-align: center;
+    width: 45%;
+    height: 30%;
+}
+
+div.form_autoriz {
+    position: relative;
+    bottom: 200px;
+    border-radius: 30px;
+    position: relative;
+    width: 100%;
+    height: 98%;
+    z-index: 1;
+    box-sizing: border-box;
+    /*градиент*/
+    background: linear-gradient(0deg, #ddeee1, #ffffff 40%);
+    /*время анимауии*/
+    transition: 0.5s;
+}
+
+/*при наведении на форму*/
+.form_autoriz:hover {
+    position: relative;
+    bottom: 150px;
+}
+
+/*при наведении на кнопку-смещение*/
+/*.button_body:hover ~ .form_autoriz {*/
+/*    position: relative;*/
+/*    bottom: 210px;*/
+/*}*/
+
+/*.button_1:hover ~ .form_autoriz {*/
+/*    !*position: relative;*!*/
+/*    bottom: 150px;*/
+/*}*/
+
+form {
+    position: relative;
+    top: 52%;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+}
