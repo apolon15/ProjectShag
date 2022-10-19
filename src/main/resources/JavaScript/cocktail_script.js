@@ -49,3 +49,4 @@ document.addEventListener("DOMContentLoaded", () => {
 //     elem.checked ? console.log('checkBoxAll value', elem) : NaN;
 //   })
 })
+
