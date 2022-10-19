@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 
 @Controller
-public class FormControler {
+public class FormController {
 
     @GetMapping("/index")
     public String showMustGoOn() {
@@ -15,7 +15,7 @@ public class FormControler {
     }
 
     @PostMapping("/bar")
-    public String seconPage() {
+    public String secondPage() {
         return "bar";
     }
 

@@ -10,7 +10,9 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @ToString
+
 public class Cocktail {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
@@ -19,10 +21,13 @@ public class Cocktail {
     @ManyToOne
     @JoinColumn(name = "alcohole_id")
     private Alcohole alcohole;
+
     @ManyToOne
     @JoinColumn(name = "zapivon_id")
     private Zapivon zapivon;
+
     @ManyToOne
     @JoinColumn(name = "siropy_id")
     private Siropy siropy;
+
 }

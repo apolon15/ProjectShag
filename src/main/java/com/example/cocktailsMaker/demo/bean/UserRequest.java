@@ -9,10 +9,12 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class UserRequest {
+
     private String name;
     private Integer id;
-    private String pass;
     private String mail;
+    private String pass;
 
 }

@@ -9,7 +9,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class CocktailRequest {
+
     private Integer id;
     private String name;
+
 }
