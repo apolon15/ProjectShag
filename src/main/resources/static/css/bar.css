@@ -1,6 +1,6 @@
 body {
     display: flex;
-
+    background-color: purple;
     top: 50px;
     left: 50px;
     /* align-items: center;
@@ -37,7 +37,7 @@ body {
     transition: ease-in .2s;
 } */
 
-form{
+form {
     margin: 8%;
 }
 
