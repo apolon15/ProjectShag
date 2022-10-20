@@ -41,12 +41,25 @@ function showCheckboxes3() {
     }
 }
 
+/* ///////////////////////////////////////////////////// */
 
 document.addEventListener("DOMContentLoaded", () => {
-  const checkBoxAll = document.querySelectorAll('input[type=checkbox]');
-  console.log('checkBoxAll', checkBoxAll);
-//   checkBoxAll.forEach(elem => {
-//     elem.checked ? console.log('checkBoxAll value', elem) : NaN;
-//   })
+    const checkBoxAll = document.querySelectorAll('input[type=checkbox]');
+    console.log('checkBoxAll', checkBoxAll);
+    //   checkBoxAll.forEach(elem => {
+    //     elem.checked ? console.log('checkBoxAll value', elem) : NaN;
+    //   })
 })
 
+/* ///////////////////////////////////////////////////// */
+
+// code for form registration !!!!!
+// Получить модель
+var modal = document.getElementById('id01');
+
+// Когда пользователь щелкает в любом месте за пределами модального, закройте его
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
