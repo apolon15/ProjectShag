@@ -10,16 +10,16 @@ import javax.persistence.*;
 @NoArgsConstructor
 @ToString
 @Entity
-
-public class Users {
+@Table(name="users")
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
-
     private Integer id;
     private String name;
     private String pass;
     private String mail;
+
 
 }

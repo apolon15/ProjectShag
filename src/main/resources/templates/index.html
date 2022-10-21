@@ -5,47 +5,146 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>Бар</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- jquery -->
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
-    <link type="text/css" rel="stylesheet" href="../static/css/index.css" th:href="@{css/index.css}"/>
+    <link type="text/css" rel="stylesheet" href="../static/css/bar.css" th:href="@{css/bar.css}"/>
     <!-- bootStrap & script -->
 
-    <script src="cocktail_script.js" defer></script> <!-- JS -->
+    <!-- JS -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"
-            defer></script> <!-- bootStrap -->
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script> <!-- bootStrap -->
 
 </head>
 
 <body>
-<div class="general">
-    <img src="../images/startPage.jpg" class="bg" th:src="@{../startPage.jpg}">
 
-    <form action="/bar" method="post">
-        <button class="newButton" >
-            <input type="text" size="40" placeholder="Login">
-            <input type="text" size="40" placeholder="Password" >
-        </button>
+<!-- registration form !!!!! -->
+
+<!-- Кнопка для открытия модального -->
+<button onclick="document.getElementById('id01').style.display='block'">REGISTRATION</button>
+
+<!-- Модальный (содержит форму регистрации) -->
+<div id="id01" class="modal">
+
+    <form class="modal-content" action="/action_page.php">
+        <div class="container">
+            <h1>Форма регистрации</h1> <span onclick="document.getElementById('id01').style.display='none'"
+                                             class="close" title="Закрыть модальный">BACK</span>
+            <p>Пожалуйста, заполните эту форму, чтобы создать учетную запись.</p>
+            <label for="email"><b>Email</b></label>
+            <select id="email"></select>
+            <input type="text" placeholder="Введите вашу почту" name="email" required>
+
+            <label for="psw"><b>Пароль</b></label>
+            <select id="psw"></select>
+            <input type="password" placeholder="Введите пароль" name="psw" required>
+
+            <label for="psw-repeat"><b>Повторить пароль</b></label>
+            <select id="psw-repeat"></select>
+            <input type="password" placeholder="Повторите пароль" name="psw-repeat" required>
+
+            <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Запомнить меня
+            </label>
+
+            <p>Создавая учетную запись, вы соглашаетесь с нашим <a href="#" style="color:dodgerblue">Условия и
+                конфиденциальность</a>.</p>
+
+            <div class="clearfix">
+                <button type="submit" class="signup">Регистрация</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<!-- ////////////////////////////////////////////////////////////////////////// -->
+<div class="wrap">
+
+    <form>
+        <div class="multiselect">
+            <div class="selectBox" onclick="showCheckboxes1()">
+                <select>
+                    <option>ALCOHOLE</option>
+                </select>
+                <div class="overSelect"></div>
+            </div>
+            <div id="checkboxes1">
+                <label for="one1">
+                    <input type="checkbox" id="one1"/>First checkbox</label>
+                <label for="two1">
+                    <input type="checkbox" id="two1"/>Second checkbox</label>
+                <label for="three1">
+                    <input type="checkbox" id="three1"/>Third checkbox</label>
+            </div>
+        </div>
     </form>
 
-    <!--        <div class="button_body">-->
-    <!--&lt;!&ndash;            <a href="../html/bar.html" class="button-link">&ndash;&gt;-->
-    <!--                <img src="../images/button_picture.jpg" alt="go">-->
-    <!--            </a>-->
-    <!--        </div>-->
+    <!-- ////////////////////////////////////////////////////////////////////////// -->
 
-    <!--    <div class="form_autoriz">-->
-    <!--        <form class="form_auth_style" action="#" method="post">-->
-    <!--            <input type="email" name="auth_email" placeholder="Введите Ваш имейл">-->
-    <!--            <input type="password" name="auth_pass" placeholder="Введите пароль">-->
-    <!--        </form>-->
-    <!--    </div>-->
+    <form>
+        <div class="multiselect">
+            <div class="selectBox" onclick="showCheckboxes2()">
+                <select>
+                    <option>ZAPIVON</option>
+                </select>
+                <div class="overSelect"></div>
+            </div>
+            <div id="checkboxes2">
+                <label for="one2">
+                    <input type="checkbox" id="one2"/>First checkbox</label>
+                <label for="two2">
+                    <input type="checkbox" id="two2"/>Second checkbox</label>
+                <label for="three2">
+                    <input type="checkbox" id="three2"/>Third checkbox</label>
+            </div>
+        </div>
+    </form>
+
+    <!-- ////////////////////////////////////////////////////////////////////////// -->
+
+    <form>
+        <div class="multiselect">
+            <div class="selectBox" onclick="showCheckboxes3()">
+                <select>
+                    <option>SIROPY</option>
+                </select>
+                <div class="overSelect"></div>
+            </div>
+            <div id="checkboxes3">
+                <label for="one3">
+                    <input type="checkbox" id="one3" checked/>First checkbox</label>
+                <label for="two3">
+                    <input type="checkbox" id="two3"/>Second checkbox</label>
+                <label for="three3">
+                    <input type="checkbox" id="three3" checked/>Third checkbox</label>
+            </div>
+        </div>
+    </form>
+
 </div>
+
+<!-- ////////////////////////////////////////////////////////////////////////// -->
+
+
+<script src="../static/js/bar_script.js"></script>
+
+<script th:inline="javascript">
+
+        /* variable used by index.js */
+    var referenceId = [[${referenceId}]];
+
+
+</script>
+
+<script type="text/javascript" th:src="@{/js/bar_script.js}"></script>
 
 </body>
 
