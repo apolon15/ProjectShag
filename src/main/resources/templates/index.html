@@ -25,6 +25,8 @@
 
 <body>
 
+<img src="../images/startPage3.jpg" class="bg" th:src="@{../startPage3.jpg}">
+
 <!-- registration form !!!!! -->
 
 <!-- Кнопка для открытия модального -->
@@ -39,15 +41,15 @@
                                              class="close" title="Закрыть модальный">BACK</span>
             <p>Пожалуйста, заполните эту форму, чтобы создать учетную запись.</p>
             <label for="email"><b>Email</b></label>
-            <select id="email"></select>
+            <select class="NO" id="email"></select>
             <input type="text" placeholder="Введите вашу почту" name="email" required>
 
             <label for="psw"><b>Пароль</b></label>
-            <select id="psw"></select>
+            <select class="NO" id="psw"></select>
             <input type="password" placeholder="Введите пароль" name="psw" required>
 
             <label for="psw-repeat"><b>Повторить пароль</b></label>
-            <select id="psw-repeat"></select>
+            <select class="NO" id="psw-repeat"></select>
             <input type="password" placeholder="Повторите пароль" name="psw-repeat" required>
 
             <label>
@@ -133,6 +135,9 @@
 
 <!-- ////////////////////////////////////////////////////////////////////////// -->
 
+<!-- TEST NEW -->
+<button type="button" class="addToShake">CREATE COCKTAIL</button>
+
 
 <script src="../static/js/bar_script.js"></script>
 
@@ -140,6 +145,8 @@
 
         /* variable used by index.js */
     var referenceId = [[${referenceId}]];
+
+
 
 
 </script>
