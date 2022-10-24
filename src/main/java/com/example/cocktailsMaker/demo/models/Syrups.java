@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Entity
 @ToString
 
-public class Siropy {
+public class Syrups {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -1,8 +1,25 @@
+/*убирает полосы прокрутки*/
 html {
     overflow: hidden;
 }
 
-/*убирает полосы прокрутки*/
+/*убирает ID*/
+.NO {
+    visibility: hidden;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* закрепить сверху-слева */
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    /* для ровной картинки */
+}
 
 /* code for form registration !!!!! */
 * {
@@ -29,10 +46,15 @@ input[type=password]:focus {
 
 /* Установите стиль для всех кнопок */
 button {
+    /*располож. по середин кнопки*/
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+
     background-color: #ca29b2;
     color: white;
-    padding: 14px 15px;
-    margin: 8px 0;
+    padding: 15px 15px;
+    /* margin: 10px 0; */
     border: none;
     cursor: pointer;
     width: 100%;
@@ -40,7 +62,13 @@ button {
 }
 
 button:hover {
-    opacity: 1;
+    background-color: #7e0a6c;
+    opacity: 0.9;
+}
+
+.addToShake {
+    position: absolute;
+    bottom: 0;
 }
 
 /* Поплавок очистить и кнопки регистрации и добавить равную ширину */
@@ -73,6 +101,9 @@ button:hover {
     /* Включите прокрутку, если это необходимо */
     background-color: #474e5d;
     /* padding-top: 50px; */
+
+    /*убирает полосы прокрутки*/
+    overflow: hidden;
 }
 
 /* Модальное Содержание/Бокс */
@@ -149,7 +180,6 @@ button:hover {
 
     transform: translateY(100%);
 
-    background: blue;
     width: 100px;
     height: 0px;
 
@@ -167,6 +197,8 @@ form {
 
 .selectBox {
     position: relative;
+
+    opacity: 0.9;
 }
 
 .selectBox select {
@@ -191,10 +223,16 @@ form {
 
 #checkboxes1 label {
     display: block;
+
+    background-color: #ca29b2;
+    color: white;
+    opacity: 0.9;
 }
 
 #checkboxes1 label:hover {
-    background-color: #45a2ff;
+    background-color: #7e0a6c;
+    color: white;
+    opacity: 0.9;
 }
 
 /* ///////////////////////////////////////////////////// */
@@ -206,10 +244,16 @@ form {
 
 #checkboxes2 label {
     display: block;
+
+    background-color: #ca29b2;
+    color: white;
+    opacity: 0.9;
 }
 
 #checkboxes2 label:hover {
-    background-color: #45a2ff;
+    background-color: #7e0a6c;
+    color: white;
+    opacity: 0.9;
 }
 
 /* ///////////////////////////////////////////////////// */
@@ -221,10 +265,16 @@ form {
 
 #checkboxes3 label {
     display: block;
+
+    background-color: #ca29b2;
+    color: white;
+    opacity: 0.9;
 }
 
 #checkboxes3 label:hover {
-    background-color: #45a2ff;
+    background-color: #7e0a6c;
+    color: white;
+    opacity: 0.9;
 }
 
 /* ///////////////////////////////////////////////////// */
