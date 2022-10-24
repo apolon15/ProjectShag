@@ -8,16 +8,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class FormController {
-
-    @GetMapping("/index")
+    @PostMapping("/index")
     public String showMustGoOn() {
         return "index";
     }
 
-    @PostMapping("/bar")
+    @GetMapping("/bar")
     public String secondPage() {
         return "bar";
     }
 
+
+//        @GetMapping("/test")
+//        public String test(Model model, Users users) {
+//            users = new Users(2, "Igor");
+//            model.addAttribute("user", users);
+//            return "test";
 
 }

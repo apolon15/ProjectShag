@@ -28,6 +28,6 @@ public class Cocktail {
 
     @ManyToOne
     @JoinColumn(name = "siropy_id")
-    private Siropy siropy;
+    private Syrups siropy;
 
 }

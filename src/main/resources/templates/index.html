@@ -25,8 +25,11 @@
 
 <body>
 
-<img src="../images/startPage3.jpg" class="bg" th:src="@{../startPage3.jpg}">
+<div class="general">
 
+    <img src="../images/startPageBW.jpg" class="bg" th:src="@{../startPage.jpg}">
+
+</div>
 <!-- registration form !!!!! -->
 
 <!-- Кнопка для открытия модального -->
@@ -79,12 +82,12 @@
                 <div class="overSelect"></div>
             </div>
             <div id="checkboxes1">
-                <label for="one1">
-                    <input type="checkbox" id="one1"/>First checkbox</label>
-                <label for="two1">
-                    <input type="checkbox" id="two1"/>Second checkbox</label>
-                <label for="three1">
-                    <input type="checkbox" id="three1"/>Third checkbox</label>
+                <label for="one1" th:each="alco:${listAlco}">
+                    <input type="checkbox" id="one1" th:text="${alco.getName()}"/></label>
+<!--                <label for="two1">-->
+<!--                    <input type="checkbox" id="two1"/>Second checkbox</label>-->
+<!--                <label for="three1">-->
+<!--                    <input type="checkbox" id="three1"/>Third checkbox</label>-->
             </div>
         </div>
     </form>
@@ -100,12 +103,12 @@
                 <div class="overSelect"></div>
             </div>
             <div id="checkboxes2">
-                <label for="one2">
-                    <input type="checkbox" id="one2"/>First checkbox</label>
-                <label for="two2">
-                    <input type="checkbox" id="two2"/>Second checkbox</label>
-                <label for="three2">
-                    <input type="checkbox" id="three2"/>Third checkbox</label>
+                <label for="one2" th:each="zapivon:${listZapivon}">
+                    <input type="checkbox" id="one2" th:text="${zapivon.getName()}"/></label>
+<!--                <label for="two2">-->
+<!--                    <input type="checkbox" id="two2"/>Second checkbox</label>-->
+<!--                <label for="three2">-->
+<!--                    <input type="checkbox" id="three2"/>Third checkbox</label>-->
             </div>
         </div>
     </form>
@@ -121,12 +124,12 @@
                 <div class="overSelect"></div>
             </div>
             <div id="checkboxes3">
-                <label for="one3">
-                    <input type="checkbox" id="one3" checked/>First checkbox</label>
-                <label for="two3">
-                    <input type="checkbox" id="two3"/>Second checkbox</label>
-                <label for="three3">
-                    <input type="checkbox" id="three3" checked/>Third checkbox</label>
+                <label for="one3" th:each="syr:${listSyr}">
+                    <input type="checkbox" id="one3" th:text="${syr.getName()}"/></label>
+<!--                <label for="two3">-->
+<!--                    <input type="checkbox" id="two3"/>Second checkbox</label>-->
+<!--                <label for="three3">-->
+<!--                    <input type="checkbox" id="three3" checked/>Third checkbox</label>-->
             </div>
         </div>
     </form>
@@ -145,6 +148,11 @@
 
         /* variable used by index.js */
     var referenceId = [[${referenceId}]];
+
+
+
+
+
 
 
 
