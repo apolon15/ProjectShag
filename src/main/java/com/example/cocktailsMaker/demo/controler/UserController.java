@@ -29,7 +29,7 @@ public class UserController {
     public String saveUser(@RequestParam String email, @RequestParam String psw, Model model ) {
         User user= new User(psw,email);
         userService.saveUser(user);
-        return "redirect:/index";
+        return "redirect:/bar";
     }
 
 }
