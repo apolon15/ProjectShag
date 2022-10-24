@@ -1,15 +1,165 @@
-body {
+/*убирает полосы прокрутки*/
+html {
+    overflow: hidden;
+}
+
+/*убирает ID*/
+.NO {
+    visibility: hidden;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* закрепить сверху-слева */
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    /* для ровной картинки */
+}
+
+/* code for form registration !!!!! */
+* {
+    box-sizing: border-box
+}
+
+/* Поля ввода полной ширины */
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+/* Добавить цвет фона, когда входы получают фокус */
+input[type=text]:focus,
+input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Установите стиль для всех кнопок */
+button {
+    /*располож. по середин кнопки*/
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    background-color: #ca29b2;
+    color: white;
+    padding: 15px 15px;
+    /* margin: 10px 0; */
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+button:hover {
+    background-color: #7e0a6c;
+    opacity: 0.9;
+}
+
+.addToShake {
+    position: absolute;
+    bottom: 0;
+}
+
+/* Поплавок очистить и кнопки регистрации и добавить равную ширину */
+.cancelbtn,
+.signupbtn {
+    float: left;
+    width: 50%;
+}
+
+/* Добавить отступы к элементам контейнера */
+.container {
+    padding: 8px;
+}
+
+/* Модальный (фон) */
+.modal {
+    display: none;
+    /* Скрыто по умолчанию */
+    position: fixed;
+    /* Оставаться на месте */
+    z-index: 1;
+    /* Сидеть на вершине */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Полная ширина */
+    height: 100%;
+    /* Полный высота */
+    overflow: auto;
+    /* Включите прокрутку, если это необходимо */
+    background-color: #474e5d;
+    /* padding-top: 50px; */
+
+    /*убирает полосы прокрутки*/
+    overflow: hidden;
+}
+
+/* Модальное Содержание/Бокс */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 5% auto;
+    /* 5% сверху, 5% снизу и по центру */
+    border: 1px solid #888;
+    width: 80%;
+    /* Может быть больше или меньше, в зависимости от размера экрана */
+}
+
+/* кнопка закрытия (x) */
+.close {
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffd1d1;
+}
+
+.close:hover,
+.close:focus {
+    color: #f44336;
+    cursor: pointer;
+}
+
+/* Снимите поплавки */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Измените стили для кнопки отмены и кнопки регистрации на дополнительных маленьких экранах */
+@media screen and (max-width: 300px) {
+
+    .cancelbtn,
+    .signupbtn {
+        width: 100%;
+    }
+}
+
+/* ///////////////////////////////////////////////////// */
+
+.wrap {
     display: flex;
-    background-color: purple;
+    background-color: none;
     top: 50px;
     left: 50px;
-    /* align-items: center;
-    justify-content: center; */
 
     position: relative;
 }
 
-/* .div-body {
+.div-body.wrap {
     width: 100px;
     height: 100px;
     background: red;
@@ -17,12 +167,12 @@ body {
     z-index: 10;
 }
 
-.div-body:hover .child {
+.div-body.wrap:hover .child {
     height: 250px;
     transition: ease-in .4s;
 }
 
-.child {
+.child.wrap {
     z-index: 1;
     position: absolute;
     bottom: 0;
@@ -30,12 +180,12 @@ body {
 
     transform: translateY(100%);
 
-    background: blue;
     width: 100px;
     height: 0px;
 
     transition: ease-in .2s;
-} */
+}
+
 
 form {
     margin: 8%;
@@ -47,6 +197,8 @@ form {
 
 .selectBox {
     position: relative;
+
+    opacity: 0.9;
 }
 
 .selectBox select {
@@ -62,6 +214,8 @@ form {
     bottom: 0;
 }
 
+/* ///////////////////////////////////////////////////// */
+
 #checkboxes1 {
     display: none;
     border: 1px #dadada solid;
@@ -69,13 +223,19 @@ form {
 
 #checkboxes1 label {
     display: block;
+
+    background-color: #ca29b2;
+    color: white;
+    opacity: 0.9;
 }
 
 #checkboxes1 label:hover {
-    background-color: #45a2ff;
+    background-color: #7e0a6c;
+    color: white;
+    opacity: 0.9;
 }
 
-/* /////////////////////////////////// */
+/* ///////////////////////////////////////////////////// */
 
 #checkboxes2 {
     display: none;
@@ -84,13 +244,19 @@ form {
 
 #checkboxes2 label {
     display: block;
+
+    background-color: #ca29b2;
+    color: white;
+    opacity: 0.9;
 }
 
 #checkboxes2 label:hover {
-    background-color: #45a2ff;
+    background-color: #7e0a6c;
+    color: white;
+    opacity: 0.9;
 }
 
-/* /////////////////////////////////// */
+/* ///////////////////////////////////////////////////// */
 
 #checkboxes3 {
     display: none;
@@ -99,8 +265,16 @@ form {
 
 #checkboxes3 label {
     display: block;
+
+    background-color: #ca29b2;
+    color: white;
+    opacity: 0.9;
 }
 
 #checkboxes3 label:hover {
-    background-color: #45a2ff;
+    background-color: #7e0a6c;
+    color: white;
+    opacity: 0.9;
 }
+
+/* ///////////////////////////////////////////////////// */

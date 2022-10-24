@@ -5,125 +5,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Барчело!</title>
+    <title>Welcome</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- jquery -->
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
-    <link type="text/css" rel="stylesheet" href="../static/css/bar.css" th:href="@{css/bar.css}"/>
+    <link type="text/css" rel="stylesheet" href="../static/css/index.css" th:href="@{css/index.css}"/>
     <!-- bootStrap & script -->
 
-    <!-- JS -->
-
+    <script src="cocktail_script.js" defer></script> <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-            crossorigin="anonymous"></script> <!-- bootStrap -->
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"
+            defer></script> <!-- bootStrap -->
 
 </head>
 
 <body>
-<form>
-    <div class="multiselect">
-        <div class="selectBox" onclick="showCheckboxes1()">
-            <select>
-                <option>ALCOHOLE</option>
-            </select>
-            <div class="overSelect"></div>
-        </div>
-        <div id="checkboxes1">
-            <label for="one1">
-                <input type="checkbox" id="one1"/>First checkbox</label>
-            <label for="two1">
-                <input type="checkbox" id="two1"/>Second checkbox</label>
-            <label for="three1">
-                <input type="checkbox" id="three1"/>Third checkbox</label>
-        </div>
-    </div>
-</form>
-<!-- ////////////////////////////////////////////////////////////////////////// -->
-<form>
-    <div class="multiselect">
-        <div class="selectBox" onclick="showCheckboxes2()">
-            <select>
-                <option>ZAPIVON</option>
-            </select>
-            <div class="overSelect"></div>
-        </div>
-        <div id="checkboxes2">
-            <label for="one2">
-                <input type="checkbox" id="one2"/>First checkbox</label>
-            <label for="two2">
-                <input type="checkbox" id="two2"/>Second checkbox</label>
-            <label for="three2">
-                <input type="checkbox" id="three2"/>Third checkbox</label>
-        </div>
-    </div>
-</form>
+<div class="general">
+    <img src="../images/startPage.jpg" class="bg" th:src="@{../startPage.jpg}">
 
-<!-- ////////////////////////////////////////////////////////////////////////// -->
+<!--    <div class="button_body">-->
+<!--        <a method="post" href="index.html" class="button-link">-->
+<!--            <img src="../static/NewText.jpg" th:src="@{../NewText.jpg}" alt="go">-->
+<!--        </a>-->
+<!--    </div>-->
 
-<form>
-    <div class="multiselect">
-        <div class="selectBox" onclick="showCheckboxes3()">
-            <select>
-                <option>SIROPY</option>
-            </select>
-            <div class="overSelect"></div>
-        </div>
-        <div id="checkboxes3">
-            <label for="one3">
-                <input type="checkbox" id="one3" checked/>First checkbox</label>
-            <label for="two3">
-                <input type="checkbox" id="two3"/>Second checkbox</label>
-            <label for="three3">
-                <input type="checkbox" id="three3" checked/>Third checkbox</label>
-        </div>
-    </div>
-</form>
+    <form action="/index" method="post">
+        <button class="newButton" >
+        </button>
+    </form>
 
-<!-- <select name="user_city">
-    <optgroup label="Россия">
-        <option value="1">Москва</option>
-        <option value="2">Санкт-Петербург</option>
-        <option value="3">Новосибирск</option>
-    </optgroup>
-    <optgroup label="Украина">
-        <option value="4">Киев</option>
-        <option value="5">Харьков</option>
-        <option value="6">Львов</option>
-    </optgroup>
-    <optgroup label="Беларусь">
-        <option value="7">Минск</option>
-        <option value="8">Бобруйск</option>
-        <option value="9">Гомель</option>
-    </optgroup>
-</select> -->
+ </div>
 
-<!-- <form method="post" action="input.php">
-    <p><b>Какие ингридиенты у вас есть?</b></p>
-    <p><input type="checkbox" name="ice" value="a1">ICE<Br>
-        <input type="checkbox" name="Whiskey" value="a2">Whiskey<Br>
-        <input type="checkbox" name="Wodka" value="a3">Wodka<Br>
-        <input type="checkbox" name="White_rum" value="a4">White rum<Br>
-        <input type="checkbox" name="Black_rum" value="a5">Black rum<Br>
-        <input type="checkbox" name="Gold_rum" value="a5">Gold rum
-    </p>
-    <p><input type="submit" value="Отправить"></p>
-</form> -->
-
-<!-- <div class="div-body">
-    <div class="child">
-
-    </div>
-</div> -->
-<script src="../static/js/bar_script.js"></script>
-<script th:inline="javascript">
-    /* variable used by index.js */
-    var referenceId = [[${referenceId}]];
-</script>
-<script type="text/javascript" th:src="@{/js/bar_script.js}">
-</script>
 </body>
+
 </html>

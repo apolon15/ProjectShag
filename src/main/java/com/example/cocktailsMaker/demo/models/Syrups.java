@@ -4,19 +4,20 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@Getter
 @Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 @Entity
-public class Users {
+@ToString
+
+public class Syrups {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
+
     private Integer id;
     private String name;
-    private String pass;
-    private String mail;
-}
 
+}

@@ -4,16 +4,25 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@Setter
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 @ToString
-public class Siropy {
+@Entity
+@Table(name = "users")
+public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Integer id;
     private String name;
+    private String pass;
+    private String mail;
+
+    public User(String pass, String mail) {
+        this.pass = pass;
+        this.mail = mail;
+    }
 }
