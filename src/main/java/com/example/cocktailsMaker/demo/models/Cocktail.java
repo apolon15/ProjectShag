@@ -27,7 +27,7 @@ public class Cocktail {
     private Zapivon zapivon;
 
     @ManyToOne
-    @JoinColumn(name = "siropy_id")
-    private Syrups siropy;
+    @JoinColumn(name = "syrups_id")
+    private Syrups syrups;
 
 }
