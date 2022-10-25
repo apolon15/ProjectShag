@@ -26,7 +26,7 @@ public class FormController {
     private ZapivonRepository zapivonRepository;
 
     /* метод при переходе на страницу index подгружает из таблицы все напитки и алко*/
-    @GetMapping("/index")
+    @GetMapping("/bar")
     public String showSyrups(Model model) {
         List<Syrups> listSyrups = syrupsRepository.findAll();
         List<Alcohole> listAlco = alcoholeRepository.findAll();
@@ -34,16 +34,16 @@ public class FormController {
         model.addAttribute("listSyr", listSyrups);
         model.addAttribute("listAlco", listAlco);
         model.addAttribute("listZapivon", listZapivon);
-        return "index";
+        return "bar";
     }
 //    @PostMapping("/index")
 //    public String showMustGoOn() {
 //        return "index";
 //    }
 
-    @GetMapping("/bar")
-    public String secondPage() {
-        return "bar";
+    @GetMapping("/index")
+    public String indexPage() {
+        return "index";
     }
 
 
