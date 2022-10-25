@@ -15,21 +15,22 @@
     <link type="text/css" rel="stylesheet" href="../static/css/index.css" th:href="@{css/index.css}"/>
     <!-- bootStrap & script -->
 
+
+</head>
+
+<body><img src="../static/startPage.jpg" class="bg" th:src="@{../startPage.jpg}">
+<div class="general">
+
+
+    <form method="get" th:action="@{/bar}" action="bar.html" >
+       <div> <a href="bar.html"><button class="newButton"></button></a></div>
+    </form>
+
+
     <script src="cocktail_script.js" defer></script> <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"
             defer></script> <!-- bootStrap -->
-
-</head>
-
-<body><img src="../images/startPage.jpg" class="bg" th:src="@{../startPage.jpg}">
-<div class="general">
-
-
-    <form action="/bar" method="get">
-        <button class="newButton">
-        </button>
-    </form>
 </div>
 </body>
 </html>
