@@ -16,7 +16,6 @@
     <!-- bootStrap & script -->
 
 
-
 </head>
 
 <body>
@@ -34,18 +33,21 @@
     <!-- Модальный (содержит форму регистрации) -->
     <div id="id01" class="modal">
 
-        <form class="modal-content" action="/save/user" method="post">
+        <form class="modal-content" action="/save/user" method="post" th:action="@{/save/user}" th:object="${user}">
             <div class="container">
                 <h1>Форма регистрации</h1> <span onclick="document.getElementById('id01').style.display='none'"
                                                  class="close" title="Закрыть модальный">BACK</span>
                 <p>Пожалуйста, заполните эту форму, чтобы создать учетную запись.</p>
+                <label for="name"><b>Ваше имя</b></label>
+                <select class="NO" id="name"></select>
+                <input th:field=*{name} type="text" placeholder="Введите вашу почту">
+
                 <label for="email"><b>Email</b></label>
                 <select class="NO" id="email"></select>
-                <input type="text" placeholder="Введите вашу почту" name="email" required>
-
+                <input th:field=*{mail} type="text" placeholder="Введите вашу почту">
                 <label for="psw"><b>Пароль</b></label>
                 <select class="NO" id="psw"></select>
-                <input type="password" placeholder="Введите пароль" name="psw" required>
+                <input type="password" th:field=*{pass} placeholder="Введите пароль" required>
 
                 <label for="psw-repeat"><b>Повторить пароль</b></label>
                 <select class="NO" id="psw-repeat"></select>
