@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Entity
 @ToString
 
-public class Alcohole {
+public class LightDrink {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,6 +19,5 @@ public class Alcohole {
 
     private Integer id;
     private String name;
-
 
 }

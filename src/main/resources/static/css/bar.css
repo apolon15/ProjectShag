@@ -26,6 +26,11 @@ html {
     box-sizing: border-box
 }
 
+.first_input {
+    display: inline;
+    z-index: 2;
+}
+
 /* Поля ввода полной ширины */
 input[type=text],
 input[type=password] {
@@ -150,13 +155,37 @@ button:hover {
 
 /* ///////////////////////////////////////////////////// */
 
+body {
+    background-image: url("../backFonePage2.jpg");
+    background-size: cover;
+}
+
+.general_div {
+    display: flex;
+    height: 80%;
+}
+
+nav {
+    height: 50%;
+    width: 150px;
+    margin: 0px;
+    padding: 0px;
+
+}
+
 .wrap {
     display: flex;
     background-color: none;
     top: 50px;
     left: 50px;
+    width: 70%;
+    margin: 0px;
 
     position: relative;
+}
+
+.form_for_user_date {
+    margin: 0px;
 }
 
 .div-body.wrap {
@@ -165,6 +194,10 @@ button:hover {
     background: red;
     position: relative;
     z-index: 10;
+}
+
+footer, header {
+    height: 10%;
 }
 
 .div-body.wrap:hover .child {

@@ -19,15 +19,15 @@ public class Cocktail {
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "alcohole_id")
-    private Alcohole alcohole;
+    @JoinColumn(name = "strong_drink_id")
+    private StrongDrink strongDrink;
 
     @ManyToOne
-    @JoinColumn(name = "zapivon_id")
-    private Zapivon zapivon;
+    @JoinColumn(name = "light_drink_id")
+    private LightDrink lightDrink;
 
     @ManyToOne
-    @JoinColumn(name = "syrups_id")
-    private Syrups syrups;
+    @JoinColumn(name = "midle_drink_id")
+    private MidleDrink midleDrink;
 
 }
