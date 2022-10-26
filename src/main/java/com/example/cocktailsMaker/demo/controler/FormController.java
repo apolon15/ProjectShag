@@ -3,6 +3,7 @@ package com.example.cocktailsMaker.demo.controler;
 
 import com.example.cocktailsMaker.demo.models.Alcohole;
 import com.example.cocktailsMaker.demo.models.Syrups;
+import com.example.cocktailsMaker.demo.models.User;
 import com.example.cocktailsMaker.demo.models.Zapivon;
 import com.example.cocktailsMaker.demo.repository.AlcoholeRepository;
 import com.example.cocktailsMaker.demo.repository.SyrupsRepository;
@@ -27,7 +28,7 @@ public class FormController {
 
     /* метод при переходе на страницу index подгружает из таблицы все напитки и алко*/
     @GetMapping("/bar")
-    public String showSyrups(Model model) {
+    public String showSyrups(Model model, User user) {
         List<Syrups> listSyrups = syrupsRepository.findAll();
         List<Alcohole> listAlco = alcoholeRepository.findAll();
         List<Zapivon> listZapivon = zapivonRepository.findAll();
