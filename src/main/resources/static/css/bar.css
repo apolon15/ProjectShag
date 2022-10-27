@@ -208,15 +208,27 @@ footer, header {
     border: 2px solid red;
 }
 
+aside img {
+    height: 100%;
+    width: auto;
+}
+
 aside {
+    background-repeat: no-repeat;
     background-image: url("../mirror.png");
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-size: cover;
     border: 2px solid red;
-    height: 50%;
+    height: 100%;
     width: 17.5%
 }
-aside p{
-    color: white;
+
+h3 {
+    text-align: center;
+    color: #1db074;
 }
 
 
