@@ -29,6 +29,7 @@ html {
 .first_input {
     display: inline;
     z-index: 2;
+
 }
 
 /* Поля ввода полной ширины */
@@ -160,29 +161,35 @@ body {
     background-size: cover;
 }
 
-.general_div {
+div.general_div {
     display: flex;
     height: 80%;
+    border: 5px solid red;
 }
 
 nav {
+
+    float: left;
     height: 50%;
-    width: 150px;
+    width: 17.5%;
     margin: 0px;
     padding: 0px;
+    border: 2px solid black;
 
 }
 
 .wrap {
+    float: left;
     display: flex;
-    background-color: none;
+    /*background-color: none;*/
     top: 50px;
-    left: 50px;
-    width: 70%;
+    /*left: 50px;*/
+    width: 65%;
     margin: 0px;
-
     position: relative;
+    border: 2px solid black;
 }
+
 
 .form_for_user_date {
     margin: 0px;
@@ -198,7 +205,15 @@ nav {
 
 footer, header {
     height: 10%;
+    border: 2px solid black;
 }
+
+aside {
+    border: 2px solid black;
+    height: 50%;
+    width: 17.5%
+}
+
 
 .div-body.wrap:hover .child {
     height: 250px;
@@ -217,6 +232,27 @@ footer, header {
     height: 0px;
 
     transition: ease-in .2s;
+}
+
+.form_checkbox {
+    margin: 5px;
+    padding: 5px;
+}
+
+#first {
+    margin-right: 11%;
+    margin-left: 7%;
+    margin-top: 90px;
+}
+
+#third {
+    margin-left: 11%;
+    margin-right: 7%;
+    margin-top: 90px;
+}
+
+#second {
+    margin-top: 90px;
 }
 
 
