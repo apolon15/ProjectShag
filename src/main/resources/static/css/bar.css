@@ -209,9 +209,14 @@ footer, header {
 }
 
 aside {
+    background-image: url("../mirror.png");
+    background-size: cover;
     border: 2px solid black;
     height: 50%;
     width: 17.5%
+}
+aside p{
+    color: white;
 }
 
 
