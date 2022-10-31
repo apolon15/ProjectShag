@@ -42,11 +42,11 @@ public class FormController {
     }
 
 
-    @GetMapping("/bar/withoout/reg")
+    @GetMapping("/bar/without/reg")
     public String barPage(Model model){
         model.addAttribute("user", new UserDto());
         cocktailService.getPageBar(model);
-        return "redirect:/bar/";
+        return "bar";
     }
 
 }
