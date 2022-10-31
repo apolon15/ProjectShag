@@ -1,4 +1,4 @@
-<html lang="en" xmlns:th="http://thymeaLeaf.org" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns:th="http://thymeaLeaf.org">
 
 <head>
 
@@ -18,7 +18,8 @@
 
 </head>
 
-<body style="opacity:0;transition:0.7s;">
+<body>
+
 <header class="general">
     <!-- registration form !!!!! -->
     <!-- Кнопка для открытия модального -->
@@ -32,7 +33,7 @@
                 <p>Пожалуйста, заполните эту форму, чтобы создать учетную запись.</p>
                 <label for="name"><b>Ваше имя</b></label>
                 <select class="NO" id="name"></select>
-                <input th:field=*{name} type="text" placeholder="Введите вашу имя">
+                <input th:field=*{name} type="text" placeholder="Введите вашу почту">
                 <label for="email"><b>Email</b></label>
                 <select class="NO" id="email"></select>
                 <input th:field=*{mail} type="text" placeholder="Введите вашу почту">
@@ -58,7 +59,7 @@
 <div class="general_div">
     <nav>
         <form class="form_for_user_date"><label>
-            <input class="first_input"  th:value="${name_top}" placeholder="Здесь можно его почту"/>
+            <h4 th:text="${name_top}"></h4>
         </label>
         </form>
     </nav>
@@ -74,8 +75,12 @@
                     <div class="overSelect"></div>
                 </div>
                 <div id="checkboxes1">
-                    <label for="one1" th:each="sd ,iterStat:${listSD}">
+                    <label for="one1" th:each="sd:${listMD}">
                         <input type="checkbox" id="one1" th:text="${sd.getName()}"/></label>
+                    <!--                <label for="two1">-->
+                    <!--                    <input type="checkbox" id="two1"/>Second checkbox</label>-->
+                    <!--                <label for="three1">-->
+                    <!--                    <input type="checkbox" id="three1"/>Third checkbox</label>-->
                 </div>
             </div>
         </form>
@@ -115,6 +120,7 @@
     </div>
 
     <aside><h3>Сюда должен выводиться рецепт</h3>
+        <!--        <img src="../static/mirror.png">-->
     </aside>
 </div>
 <!-- ////////////////////////////////////////////////////////////////////////// -->
@@ -124,7 +130,7 @@
 </footer>
 
 
-<script src="../js/bar_script.js"></script>
+<!--<script src="../static/js/bar_script.js"></script>-->
 
 <script th:inline="javascript">
 
@@ -137,14 +143,9 @@
 <script type="text/javascript" th:src="@{/js/bar_script.js}"></script>
 <!-- JS -->
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-        crossorigin="anonymous"></script> <!-- bootStrap -->
-<script>
-    $(document).ready(function () {
-        $("body").css("opacity", "1");
-    });
-</script>
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"-->
+<!--        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"-->
+<!--        crossorigin="anonymous"></script> &lt;!&ndash; bootStrap &ndash;&gt;-->
 </body>
 
 </html>
