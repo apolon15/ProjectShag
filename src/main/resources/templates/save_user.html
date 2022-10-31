@@ -1,4 +1,4 @@
-<html lang="en" xmlns:th="http://thymeaLeaf.org">
+<html lang="en" xmlns:th="http://thymeaLeaf.org" xmlns="http://www.w3.org/1999/html">
 
 <head>
 
@@ -12,54 +12,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
-    <link type="text/css" rel="stylesheet" href="../static/css/bar.css" th:href="@{/css/bar.css}"/>
+    <link type="text/css" rel="stylesheet" href="../static/css/user_save.css" th:href="@{css/user_save.css}"/>
     <!-- bootStrap & script -->
 
 
 </head>
 
-<body>
-
+<body style="opacity:0;transition:0.7s;">
 <header class="general">
-    <!-- registration form !!!!! -->
-    <!-- Кнопка для открытия модального -->
-    <button onclick="document.getElementById('id01').style.display='block'">REGISTRATION</button>
-    <!-- Модальный (содержит форму регистрации) -->
-    <div id="id01" class="modal">
-        <form class="modal-content" action="/save/user" method="post" th:action="@{/save/user}" th:object="${user}">
-            <div class="container">
-                <h1>Форма регистрации</h1> <span onclick="document.getElementById('id01').style.display='none'"
-                                                 class="close" title="Закрыть модальный">BACK</span>
-                <p>Пожалуйста, заполните эту форму, чтобы создать учетную запись.</p>
-                <label for="name"><b>Ваше имя</b></label>
-                <select class="NO" id="name"></select>
-                <input th:field=*{name} type="text" placeholder="Введите вашу почту">
-                <label for="email"><b>Email</b></label>
-                <select class="NO" id="email"></select>
-                <input th:field=*{mail} type="text" placeholder="Введите вашу почту">
-                <label for="psw"><b>Пароль</b></label>
-                <select class="NO" id="psw"></select>
-                <input type="password" th:field=*{pass} placeholder="Введите пароль" required>
-                <label for="psw-repeat"><b>Повторить пароль</b></label>
-                <select class="NO" id="psw-repeat"></select>
-                <input type="password" placeholder="Повторите пароль" name="psw-repeat" required>
-                <label>
-                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Запомнить меня
-                </label>
-                <p>Создавая учетную запись, вы соглашаетесь с нашим <a href="#" style="color:dodgerblue">Условия и
-                    конфиденциальность</a>.</p>
-                <div class="clearfix">
-                    <button type="submit" class="signup">Регистрация</button>
-                </div>
-            </div>
-        </form>
-    </div>
+    <button type="submit" class="signup">ВЫХОД</button>
 </header>
 
 <div class="general_div">
     <nav>
         <form class="form_for_user_date"><label>
-            <h4 th:text="${name_top}"></h4>
+            <input class="first_input" th:value="${name}" placeholder="Здесь можно его имя"/>
         </label>
         </form>
     </nav>
@@ -75,8 +42,9 @@
                     <div class="overSelect"></div>
                 </div>
                 <div id="checkboxes1">
-                    <label for="one1" th:each="sd:${listMD}">
+                    <label for="one1" th:each="sd ,iterStat:${listSD}">
                         <input type="checkbox" id="one1" th:text="${sd.getName()}"/></label>
+
                     <!--                <label for="two1">-->
                     <!--                    <input type="checkbox" id="two1"/>Second checkbox</label>-->
                     <!--                <label for="three1">-->
@@ -130,7 +98,7 @@
 </footer>
 
 
-<!--<script src="../static/js/bar_script.js"></script>-->
+<script src="../js/bar_script.js"></script>
 
 <script th:inline="javascript">
 
@@ -143,9 +111,14 @@
 <script type="text/javascript" th:src="@{/js/bar_script.js}"></script>
 <!-- JS -->
 
-<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"-->
-<!--        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"-->
-<!--        crossorigin="anonymous"></script> &lt;!&ndash; bootStrap &ndash;&gt;-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script> <!-- bootStrap -->
+<script>
+    $(document).ready(function () {
+        $("body").css("opacity", "1");
+    });
+</script>
 </body>
 
 </html>
