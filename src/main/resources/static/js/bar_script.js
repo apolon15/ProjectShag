@@ -1,5 +1,23 @@
 /* ///////////////////////////////////////////////////// */
 /* для 1ого выпад. списка */
+var buttonText = document.querySelector("#button_text_change");
+var logInputValue = document.querySelector("#text_log_name").textContent;
+var nameInner;
+if (logInputValue.length > 0) {
+    nameInner = true;
+    buttonText.innerHTML = "ВЫХОД";
+} else {
+    nameInner = false;
+    buttonText.innerHTML = "РЕГИСТРАЦИЯ";
+}
+// function replaceNameButton() {
+//     if (nameInner) {
+//
+//     } if(!nameInner){
+//
+//     }
+//
+// }
 
 var expanded1 = false;
 
@@ -48,12 +66,10 @@ function showCheckboxes3() {
 
 /* ///////////////////////////////////////////////////// */
 
+
 document.addEventListener("DOMContentLoaded", () => {
     const checkBoxAll = document.querySelectorAll('input[type=checkbox]');
     console.log('checkBoxAll', checkBoxAll);
-    //   checkBoxAll.forEach(elem => {
-    //     elem.checked ? console.log('checkBoxAll value', elem) : NaN;
-    //   })
 })
 
 /* ///////////////////////////////////////////////////// */
@@ -71,7 +87,9 @@ window.onclick = function (event) {
 
 /* /////////////////////////////////////////////////////    TEST   NEW */
 
-$(document).ready(function () { $("#pass, #pass2").keyup(validate); });
+$(document).ready(function () {
+    $("#pass, #pass2").keyup(validate);
+});
 
 function validate() {
     var pass1 = $("#psw").val();
@@ -79,5 +97,7 @@ function validate() {
 
     if (pass1 == pass2) {
         $("#sw").text("Пароли совпадают");
-    } else { $("#sw").text("Пароли не совпадают"); }
+    } else {
+        $("#sw").text("Пароли не совпадают");
+    }
 }
