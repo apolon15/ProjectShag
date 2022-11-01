@@ -25,22 +25,20 @@ public class FormController {
     @Autowired
     private CocktailServiceImpl cocktailService;
 
-    /* метод при переходе на страницу index подгружает из таблицы все напитки и алко*/
-    @GetMapping("/bar/{id}")
-    public String showSyrups(Model model, @PathVariable(required = false) Integer id) {
-//        if (Objects.nonNull(id)) {
-//           UserDto userDto = userService.getUserById(id);
-//           model.addAttribute("name_top", userDto.getName());
-//        }
-        cocktailService.getPageBar(model);
-        return "bar";
-    }
+
+//    @GetMapping("/bar/{id}")
+//    public String showSyrups(Model model, @PathVariable(required = false) Integer id) {
+//        cocktailService.getPageBar(model);
+//        return "bar";
+//    }
 
     @GetMapping("/index")
     public String indexPage() {
         return "index";
     }
 
+
+    /* метод при переходе на страницу index подгружает из таблицы все напитки и алко*/
 
     @GetMapping("/bar/without/reg")
     public String barPage(Model model){

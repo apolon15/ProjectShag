@@ -190,7 +190,6 @@ nav {
     border: 2px solid red;
 }
 
-
 .form_for_user_date {
     margin: 0px;
 }
@@ -203,8 +202,9 @@ nav {
     z-index: 10;
 }
 
+
 h4 {
-    color: white;
+    color: #ca29b2;
 }
 
 footer, header {
