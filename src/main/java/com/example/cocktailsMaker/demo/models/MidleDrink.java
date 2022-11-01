@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Entity
 @ToString
 
-public class Zapivon {
+public class MidleDrink {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

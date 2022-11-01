@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Entity
 @ToString
 
-public class Syrups {
+public class StrongDrink {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,5 +19,6 @@ public class Syrups {
 
     private Integer id;
     private String name;
+
 
 }
