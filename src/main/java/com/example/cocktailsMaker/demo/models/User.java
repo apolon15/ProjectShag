@@ -10,6 +10,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @ToString
 @Entity
+@Builder
 @Table(name = "users")
 public class User {
 
@@ -21,8 +22,4 @@ public class User {
     private String pass;
     private String mail;
 
-    public User(String pass, String mail) {
-        this.pass = pass;
-        this.mail = mail;
-    }
 }

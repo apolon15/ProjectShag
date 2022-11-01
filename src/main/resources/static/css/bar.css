@@ -26,6 +26,12 @@ html {
     box-sizing: border-box
 }
 
+.first_input {
+    display: inline;
+    z-index: 2;
+
+}
+
 /* Поля ввода полной ширины */
 input[type=text],
 input[type=password] {
@@ -150,13 +156,42 @@ button:hover {
 
 /* ///////////////////////////////////////////////////// */
 
-.wrap {
-    display: flex;
-    background-color: none;
-    top: 50px;
-    left: 50px;
+body {
+    background-image: url("../backFonePage2.jpg");
+    background-size: cover;
+}
 
+div.general_div {
+    display: flex;
+    height: 80%;
+    border: 5px solid red;
+}
+
+nav {
+
+    float: left;
+    height: 50%;
+    width: 17.5%;
+    margin: 0px;
+    padding: 0px;
+    border: 2px solid red;
+
+}
+
+.wrap {
+    float: left;
+    display: flex;
+    /*background-color: none;*/
+    top: 50px;
+    /*left: 50px;*/
+    width: 65%;
+    margin: 0px;
     position: relative;
+    border: 2px solid red;
+}
+
+.form_for_user_date {
+    margin: 0px;
 }
 
 .div-body.wrap {
@@ -166,6 +201,40 @@ button:hover {
     position: relative;
     z-index: 10;
 }
+
+
+h4 {
+    color: #ca29b2;
+}
+
+footer, header {
+    height: 10%;
+    border: 2px solid red;
+}
+
+aside img {
+    height: 100%;
+    width: auto;
+}
+
+aside {
+    background-repeat: no-repeat;
+    background-image: url("../mirror.png");
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    border: 2px solid red;
+    height: 100%;
+    width: 17.5%
+}
+
+h3 {
+    text-align: center;
+    color: #1db074;
+}
+
 
 .div-body.wrap:hover .child {
     height: 250px;
@@ -184,6 +253,27 @@ button:hover {
     height: 0px;
 
     transition: ease-in .2s;
+}
+
+.form_checkbox {
+    margin: 5px;
+    padding: 5px;
+}
+
+#first {
+    margin-right: 11%;
+    margin-left: 7%;
+    margin-top: 90px;
+}
+
+#third {
+    margin-left: 11%;
+    margin-right: 7%;
+    margin-top: 90px;
+}
+
+#second {
+    margin-top: 90px;
 }
 
 

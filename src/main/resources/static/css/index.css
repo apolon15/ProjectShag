@@ -38,13 +38,19 @@ button {
     background-position: center top;
     background-size: cover;
     position: relative;
-    bottom: 50px;
-    width: 100%;
+    bottom: 40px;
+    width: 70%;
     height: 100%;
     z-index: 2;
     border: none;
     transition: 0.3s;
+    border: 2px solid black;
 
+}
+h4{
+    display: none;
+    position: relative;
+    top:80px;
 }
 
 input {
@@ -55,15 +61,16 @@ input {
 
 /*при наведении на кнопку*/
 button:hover {
+
     position: relative;
     height: 150%;
     transition: 0.3s;
     bottom: 40px;
     transform: translateX(10px);
-    box-shadow: -10px -10px 3px #201c1f;
+    box-shadow: -8px -8px 12px #dc9644;
 }
 
-button:hover input {
+button:hover h4 {
     display: inline;
 }
 
@@ -104,6 +111,7 @@ a img {
     text-align: center;
     width: 45%;
     height: 30%;
+
 }
 
 div.form_autoriz {
