@@ -1,4 +1,3 @@
-
 body {
     display: flex;
     align-items: center;
@@ -21,6 +20,12 @@ body {
     /* для ровной картинки */
 }
 
+.general {
+    text-align: center;
+    width: 45%;
+    height: 30%;
+}
+
 a {
     display: block;
     width: 100%;
@@ -34,7 +39,7 @@ button {
     top: 0;
     left: 0;
     border-radius: 30px;
-    background-image: url("../NewText.jpg");
+    background-image: url("../NewText_1.jpg");
     background-position: center top;
     background-size: cover;
     position: relative;
@@ -45,41 +50,27 @@ button {
     border: none;
     transition: 0.3s;
     border: 2px solid black;
-
-}
-h4{
-    display: none;
-    position: relative;
-    top:80px;
 }
 
-input {
-    position: relative;
-    top: 150px;
+h4 {
     display: none;
+    position: relative;
+    top: 80px;
 }
 
 /*при наведении на кнопку*/
 button:hover {
-
     position: relative;
     height: 150%;
-    transition: 0.3s;
     bottom: 40px;
-    transform: translateX(10px);
-    box-shadow: -8px -8px 12px #dc9644;
+    /* transform: translateX(10px); */
+    box-shadow: 0 -8px 12px #dc9644;
 }
 
 button:hover h4 {
     display: inline;
-}
 
-/*При нажатии на кнопку*/
-button:active {
-    transform: translateY(0px);
-    bottom: 50px;
-    box-shadow: none;
-    transition: none;
+    opacity: 1;
 }
 
 a img {
@@ -106,45 +97,6 @@ a img {
     height: 100%;
     /*border: 2px solid #000;*/
 }
-
-.general {
-    text-align: center;
-    width: 45%;
-    height: 30%;
-
-}
-
-div.form_autoriz {
-    position: relative;
-    bottom: 200px;
-    border-radius: 30px;
-    position: relative;
-    width: 100%;
-    height: 98%;
-    z-index: 1;
-    box-sizing: border-box;
-    /*градиент*/
-    background: linear-gradient(0deg, #ddeee1, #ffffff 40%);
-    /*время анимауии*/
-    transition: 0.5s;
-}
-
-/*при наведении на форму*/
-.form_autoriz:hover {
-    position: relative;
-    bottom: 150px;
-}
-
-/*при наведении на кнопку-смещение*/
-/*.button_body:hover ~ .form_autoriz {*/
-/*    position: relative;*/
-/*    bottom: 210px;*/
-/*}*/
-
-/*.button_1:hover ~ .form_autoriz {*/
-/*    !*position: relative;*!*/
-/*    bottom: 150px;*/
-/*}*/
 
 form {
     position: relative;

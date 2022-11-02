@@ -10,7 +10,8 @@ if (logInputValue.length > 0) {
     nameInner = false;
     buttonText.innerHTML = "РЕГИСТРАЦИЯ";
 }
-
+/* ///////////////////////////////////////////////////// */
+/* меняет кнопку рег. на выход */
 function TEST() {
     var formBlock = document.querySelector('#id01');
     formBlock.style.display=`none`;
