@@ -29,7 +29,6 @@ html {
 .first_input {
     display: inline;
     z-index: 2;
-
 }
 
 /* Поля ввода полной ширины */
@@ -115,7 +114,7 @@ button:hover {
 /* Модальное Содержание/Бокс */
 .modal-content {
     background-color: #fefefe;
-    margin: 5% auto 5% auto;
+    margin: 2% auto 5% auto;
     /* 5% сверху, 5% снизу и по центру */
     border: 1px solid #888;
     width: 80%;
@@ -157,7 +156,7 @@ button:hover {
 /* ///////////////////////////////////////////////////// */
 
 body {
-    background-image: url("../backFonePage2.jpg");
+    background-image: url("../bg.jpg");
     background-size: cover;
 }
 
@@ -190,6 +189,7 @@ nav {
     border: 2px solid red;
 }
 
+
 .form_for_user_date {
     margin: 0px;
 }
@@ -202,12 +202,8 @@ nav {
     z-index: 10;
 }
 
-
-h4 {
-    color: #ca29b2;
-}
-
-footer, header {
+footer,
+header {
     height: 10%;
     border: 2px solid red;
 }

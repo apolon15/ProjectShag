@@ -10,14 +10,21 @@ if (logInputValue.length > 0) {
     nameInner = false;
     buttonText.innerHTML = "РЕГИСТРАЦИЯ";
 }
-// function replaceNameButton() {
-//     if (nameInner) {
-//
-//     } if(!nameInner){
-//
-//     }
-//
-// }
+/* ///////////////////////////////////////////////////// */
+/* меняет кнопку рег. на выход */
+function TEST() {
+    var formBlock = document.querySelector('#id01');
+    formBlock.style.display=`none`;
+    if (buttonText.textContent = "РЕГИСТРАЦИЯ") {
+        formBlock.style.display = 'block';
+        var a = document.createElement('a'); // generate node
+        a.setAttribute('href', 'index.html');         // set attribute
+        document.getElementById("button_Re_change").appendChild(a);
+    }
+    else{
+        formBlock.style.display = 'none';
+    }
+}
 
 var expanded1 = false;
 
