@@ -25,40 +25,43 @@
 <header class="general">
     <!-- registration form !!!!! -->
     <!-- Кнопка для открытия модального -->
-    <button onclick="document.getElementById('id01').style.display='block'"  ><span id="button_text_change">РЕГИСТРАЦИЯ</span></button>
+    <form class="form_button_reg" action="/reg" method="get" th:action="@{/reg}" th:object="${user}">
+        <button type="submit" class="button_registration"><span id="button_text_change">РЕГИСТРАЦИЯ</span></button>
+    </form>
     <!-- Модальный (содержит форму регистрации) -->
-    <div id="id01" class="modal">
-        <form class="modal-content" action="/save/user" method="post" th:action="@{/save/user}" th:object="${user}">
-            <div class="container">
-                <h1>Форма регистрации</h1> <span onclick="document.getElementById('id01').style.display='none'"
-                                                 class="close" title="Закрыть модальный">BACK</span>
-                <p>Пожалуйста, заполните эту форму, чтобы создать учетную запись.</p>
-                <label for="name"><b>Ваше имя</b></label>
-                <select class="NO" id="name"></select>
-                <input th:field=*{name} type="text" placeholder="Введите вашу почту">
-                <label for="email"><b>Email</b></label>
-                <select class="NO" id="email"></select>
-                <input th:field=*{mail} type="text" placeholder="Введите вашу почту">
-                <label for="psw"><b>Пароль</b></label>
-                <select class="NO" id="psw"></select>
-                <input type="password" th:field=*{pass} placeholder="Введите пароль" required>
-                <label for="psw-repeat"><b>Повторить пароль</b></label>
-                <select class="NO" id="psw-repeat"></select>
-                <input type="password" placeholder="Повторите пароль" name="psw-repeat" required>
-                <label>
-                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Запомнить меня
-                </label>
-                <p>Создавая учетную запись, вы соглашаетесь с нашим <a href="#" style="color:dodgerblue">Условия и
-                    конфиденциальность</a>.</p>
-                <div class="clearfix">
-                    <button type="submit" class="signup" >Регистрация</button>
-                </div>
-            </div>
-        </form>
-    </div>
+    <!--    <div id="id01" class="modal">-->
+    <!--        <form class="modal-content" action="/save/user" method="post" th:action="@{/save/user}" th:object="${user}">-->
+    <!--            <div class="container">-->
+    <!--                <h1>Форма регистрации</h1> <span onclick="document.getElementById('id01').style.display='none'"-->
+    <!--                                                 class="close" title="Закрыть модальный">BACK</span>-->
+    <!--                <p>Пожалуйста, заполните эту форму, чтобы создать учетную запись.</p>-->
+    <!--                <label for="name"><b>Ваше имя</b></label>-->
+    <!--                <select class="NO" id="name"></select>-->
+    <!--                <input th:field=*{name} type="text" placeholder="Введите вашу почту">-->
+    <!--                <label for="email"><b>Email</b></label>-->
+    <!--                <select class="NO" id="email"></select>-->
+    <!--                <input th:field=*{mail} type="text" placeholder="Введите вашу почту">-->
+    <!--                <label for="psw"><b>Пароль</b></label>-->
+    <!--                <select class="NO" id="psw"></select>-->
+    <!--                <input type="password" th:field=*{pass} placeholder="Введите пароль" required>-->
+    <!--                <label for="psw-repeat"><b>Повторить пароль</b></label>-->
+    <!--                <select class="NO" id="psw-repeat"></select>-->
+    <!--                <input type="password" placeholder="Повторите пароль" name="psw-repeat" required>-->
+    <!--                <label>-->
+    <!--                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Запомнить меня-->
+    <!--                </label>-->
+    <!--                <p>Создавая учетную запись, вы соглашаетесь с нашим <a href="#" style="color:dodgerblue">Условия и-->
+    <!--                    конфиденциальность</a>.</p>-->
+    <!--                <div class="clearfix">-->
+    <!--                    <button type="submit" class="signup">Регистрация</button>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </form>-->
+    <!--    </div>-->
 </header>
 
 <div class="general_div">
+
     <nav>
         <form class="form_for_user_date"><label>
             <h4 id="text_log_name" th:text="${name_top}"></h4>
@@ -67,18 +70,17 @@
     </nav>
     <!-- ////////////////////////////////////////////////////////////////////////// -->
     <div class="wrap">
-
         <form class="form_checkbox" id="first">
-            <div class="multiselect" >
-                <div class="selectBox" onclick="showCheckboxes1()">
-                    <select>
+            <div class="multiselect">
+                <div class="selectBox" onclick="showCheckboxes1()" >
+                    <select >
                         <option class="test">Крепкие напитки(основа)</option>
                     </select>
-                    <div class="overSelect" ></div>
+                    <div class="overSelect"></div>
                 </div>
-                <div id="checkboxes1">
-                    <label for="one1" th:each="sd:${listMD}" >
-                        <input type="checkbox" id="one1" th:text="${sd.getName()}" class="test1"/></label>
+                <div class="checkboxes" id="checkboxes1">
+                    <label th:each="sd:${listSD}">
+                        <input type="checkbox" th:text="${sd.getName()}" class="test1"/></label>
                 </div>
             </div>
         </form>
@@ -93,9 +95,9 @@
                     </select>
                     <div class="overSelect"></div>
                 </div>
-                <div id="checkboxes2">
-                    <label for="one2" th:each="ld:${listLD}">
-                        <input type="checkbox" id="one2" th:text="${ld.getName()}"/></label>
+                <div class="checkboxes" id="checkboxes2">
+                    <label th:each="ld:${listLD}">
+                        <input type="checkbox" th:text="${ld.getName()}"/></label>
                 </div>
             </div>
         </form>
@@ -109,33 +111,29 @@
                     </select>
                     <div class="overSelect"></div>
                 </div>
-                <div id="checkboxes3">
-                    <label for="one3" th:each="md:${listMD}">
-                        <input type="checkbox" id="one3" th:text="${md.getName()}"/></label>
+                <div class="checkboxes" id="checkboxes3">
+                    <label th:each="md:${listMD}">
+                        <input type="checkbox" th:text="${md.getName()}"/></label>
                 </div>
             </div>
         </form>
     </div>
 
-    <aside><h3>Сюда должен выводиться рецепт</h3>
-        <!--        <img src="../static/mirror.png">-->
+    <aside>
+        <h3>Сюда должен выводиться рецепт</h3>
     </aside>
 </div>
 <!-- ////////////////////////////////////////////////////////////////////////// -->
 <!-- TEST NEW -->
 <footer>
-    <button type="button" class="addToShake">CREATE COCKTAIL</button>
+    <button type="button" class="addToShake"><span>CREATE COCKTAIL</span></button>
 </footer>
 
 
-<script src="../static/js/bar_script.js"></script>
+<script th:inline="javascript"></script>
 
-<script th:inline="javascript">
-
-</script>
-
-<script type="text/javascript" th:src="@{/js/bar_script.js}"></script> <!-- JS -->
-
+<script type="text/javascript" th:src="@{/js/bar_script.js}"></script>
+<!--<script src="../static/js/bar_script.js"></script>-->
 </body>
 
 </html>

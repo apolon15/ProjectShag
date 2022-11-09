@@ -1,0 +1,230 @@
+/*убирает полосы прокрутки*/
+html {
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box
+}
+
+/* Поля ввода полной ширины */
+input[type=text],
+input[type=password] {
+    /*width: 100%;*/
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+form {
+    background-image: url("../bg_form_reg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 10px 0px 10px 10px;
+}
+
+#form_name {
+    width: 40%;
+    display: block;
+}
+
+#form_mail {
+    width: 50%;
+    display: block;
+}
+
+#form_pass, #form_pass_rep {
+    width: 60%;
+    display: block;
+}
+
+h1, label, p {
+    color: white;
+}
+
+/* Добавить цвет фона, когда входы получают фокус */
+input[type=text]:focus,
+input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Установите стиль для всех кнопок */
+button {
+    /*располож. по середин кнопки*/
+    /*position: relative;*/
+    /*left: 50%;*/
+    /*transform: translate(-50%, 0);*/
+
+    background-color: #B8A488;
+    color: white;
+    padding: 15px 15px;
+    /* margin: 10px 0; */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 70%;
+    opacity: 0.9;
+}
+
+button:hover {
+    background-color: #7e0a6c;
+    opacity: 0.9;
+}
+
+/*убирает ID*/
+/*.NO {*/
+/*    visibility: hidden;*/
+/*}*/
+
+/*.bg {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    !* закрепить сверху-слева *!*/
+
+/*    width: 100%;*/
+/*    height: 100%;*/
+
+/*    object-fit: cover;*/
+/*    !* для ровной картинки *!*/
+/*}*/
+
+/* code for form registration !!!!! */
+
+
+/*.first_input {*/
+/*    display: inline;*/
+/*    z-index: 2;*/
+
+/*}*/
+
+
+/* Поплавок очистить и кнопки регистрации и добавить равную ширину */
+/*.cancelbtn,*/
+/*.signupbtn {*/
+/*    float: left;*/
+/*    width: 50%;*/
+/*}*/
+
+/* Добавить отступы к элементам контейнера */
+.container {
+    padding: 8px;
+}
+
+/* Модальный (фон) */
+.modal {
+    display: block;
+    /* Скрыто по умолчанию */
+    position: fixed;
+    /* Оставаться на месте */
+    z-index: 1;
+    /* Сидеть на вершине */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Полная ширина */
+    height: 100%;
+    /* Полный высота */
+    overflow: auto;
+    /* Включите прокрутку, если это необходимо */
+    /*background-color: #474e5d;*/
+    /* padding-top: 50px; */
+
+    /*убирает полосы прокрутки*/
+    overflow: hidden;
+}
+
+/* Модальное Содержание/Бокс */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 5% auto;
+    /* 5% сверху, 5% снизу и по центру */
+    border: 1px solid #888;
+    width: 80%;
+    /* Может быть больше или меньше, в зависимости от размера экрана */
+}
+
+/* кнопка закрытия (x) */
+/*.close {*/
+/*    position: absolute;*/
+/*    right: 20px;*/
+/*    top: 18px;*/
+/*    font-size: 24px;*/
+/*    font-weight: bold;*/
+/*    color: #ffd1d1;*/
+/*}*/
+
+/*.close:hover,*/
+/*.close:focus {*/
+/*    color: #f44336;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/* Снимите поплавки */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Измените стили для кнопки отмены и кнопки регистрации на дополнительных маленьких экранах */
+@media screen and (max-width: 300px) {
+
+    .cancelbtn,
+    .signupbtn {
+        width: 100%;
+    }
+}
+
+/* ///////////////////////////////////////////////////// */
+
+body {
+    background-image: url("../bg-reg.jpg");
+    background-size: cover;
+
+}
+
+/*div.general_div {*/
+/*    display: flex;*/
+/*    height: 80%;*/
+/*    border: 5px solid red;*/
+/*}*/
+
+
+/*.form_for_user_date {*/
+/*    margin: 0px;*/
+/*}*/
+
+
+/*form {*/
+/*    margin: 8%;*/
+/*}*/
+
+.multiselect {
+    width: 200px;
+}
+
+.selectBox {
+    position: relative;
+
+    opacity: 0.9;
+}
+
+.selectBox select {
+    width: 100%;
+    font-weight: bold;
+}
+
+.overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+
