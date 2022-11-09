@@ -41,10 +41,15 @@ public class FormController {
     /* метод при переходе на страницу index подгружает из таблицы все напитки и алко*/
 
     @GetMapping("/bar/without/reg")
-    public String barPage(Model model){
+    public String barPage(Model model) {
         model.addAttribute("user", new UserDto());
         cocktailService.getPageBar(model);
         return "bar";
     }
 
+    @GetMapping("/reg")
+    public String regPage(Model model) {
+        model.addAttribute("user", new UserDto());
+        return "reg";
+    }
 }

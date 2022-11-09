@@ -1,0 +1,51 @@
+<html lang="en" xmlns:th="http://thymeaLeaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бар</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- jquery -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <link type="text/css" rel="stylesheet" href="../static/css/reg.css" th:href="@{/css/reg.css}"/>
+    <!-- bootStrap & script -->
+
+
+</head>
+
+<body>
+
+
+    <!-- Модальный (содержит форму регистрации) -->
+    <div id="id01" class="modal">
+        <form class="modal-content" action="/save/user" method="post" th:action="@{/save/user}" th:object="${user}">
+
+                <h1>Форма регистрации</h1>
+<!--                <span onclick="document.getElementById('id01').style.display='none'"-->
+<!--                                                 class="close" title="Закрыть модальный">BACK</span>-->
+                <p>Пожалуйста, заполните эту форму, чтобы создать учетную запись.</p>
+                <label ><b>Ваше имя</b></label>
+                <input id="form_name" th:field=*{name} type="text" placeholder="Введите вашу имя" required oninvalid="this.setCustomValidity('Вы не указали имя')" oninput="this.setCustomValidity(``)">
+                <label><b>Email</b></label>
+                <input  id="form_mail" th:field=*{mail} type="text" placeholder="Введите вашу почту" required oninvalid="this.setCustomValidity('Вы не указали почту')" oninput="this.setCustomValidity(``)">
+                <label ><b>Пароль</b></label>
+                <input id="form_pass" type="password" th:field=*{pass} placeholder="Введите пароль" required oninvalid="this.setCustomValidity('Вы не указали пароль')" oninput="this.setCustomValidity(``)">
+                <label><b>Повторить пароль</b></label>
+                <input id="form_pass_rep" type="password" placeholder="Повторите пароль" name="psw-repeat" required oninvalid="this.setCustomValidity('Вы не указали пароль')" oninput="this.setCustomValidity(``)">
+                <label>
+                    <input type="checkbox" checked="checked" name="remember" > Запомнить меня
+                </label>
+                <p>Создавая учетную запись, вы соглашаетесь с нашим <a href="#" style="color:dodgerblue">Условия и
+                    конфиденциальность</a>.</p>
+                <button type="submit" class="signup"><h3>Регистрация</h3></button>
+
+        </form>
+    </div>
+</body>
+
+</html>
