@@ -77,8 +77,8 @@
 
             <div class="dropdown-content">
 
-                <label for="one1" th:each="sd:${listMD}">
-                    <input type="checkbox" id="one1" th:text="${sd.getName()}" class="test1" />
+                <label  th:each="sd:${listSD}">
+                    <input type="checkbox"  th:text="${sd.getName()}" class="test1" />
                 </label>
 
             </div>

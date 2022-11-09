@@ -446,19 +446,23 @@ div.checkboxes {
 .dropbtn {
     background-color: #ca29b2;
     color: white;
-    padding: 16px;
+    /*padding: 16px;*/
     font-size: 16px;
     border: none;
+    /*min-width: 160px;*/
+    width: 100%;
+    margin-top: 50px;
 
-    min-width: 160px;
 
   }
+label{
+    width: 100%;
+}
 
   /* Контейнер <div> - необходим для размещения выпадающего содержимого */
   .dropdown {
     position: relative;
     /* display: inline-block; */
-
     height: 0;
   }
 
@@ -467,7 +471,7 @@ div.checkboxes {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
-    min-width: 160px;
+    min-width: 50px;
     z-index: 1;
   }
 
