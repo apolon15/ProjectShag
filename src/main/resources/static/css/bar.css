@@ -1,482 +1,136 @@
-/*убирает полосы прокрутки*/
+/* убирает полосы прокрутки */
 html {
     overflow: hidden;
 }
-
-/*убирает ID*/
-.NO {
-    visibility: hidden;
-}
-
+/* <!-- ////////////////////////////////////////////////////////////////////////// --> */
+/* <!-- BG Main !!!!! --> */
 .bg {
     position: absolute;
     top: 0;
     left: 0;
     /* закрепить сверху-слева */
-
     width: 100%;
     height: 100%;
-
+    /* для ровной картинки */
+    object-fit: cover;
+    z-index: 0;
+}
+.bg_inside {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    /* закрепить сверху-слева */
+    width: 80%;
+    height: 100%;
     object-fit: cover;
     /* для ровной картинки */
+    z-index: 0;
 }
-
-/* code for form registration !!!!! */
-* {
-    box-sizing: border-box;
-}
-
-.first_input {
-    display: inline;
-    z-index: 2;
-}
-
-/* Поля ввода полной ширины */
-input[type=text],
-input[type=password] {
-    width: 100%;
-    padding: 1%;
-    margin: 0.5% 0 1.5% 0;
-    display: inline-block;
-    border: none;
-    background: #f1f1f1;
-}
-
-/* Добавить цвет фона, когда входы получают фокус */
-input[type=text]:focus,
-input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-}
-
-/*.button_registration{*/
-/*    height: 100%;*/
-/*    */
-/* }*/
-
-span {
-    font-family: cursive;
-}
-
-/* Установите стиль для всех кнопок */
-button {
-
+/* <!-- ////////////////////////////////////////////////////////////////////////// --> */
+/* <!-- Registration button !!!!! --> */
+.registration_button {
     /*располож. по середин кнопки*/
     position: relative;
-    left: 10%;
-    border-radius: 10px;
-    /*transform: translate(-50%, 0);*/
-
-    background-color: #B8A488;
-    color: white;
-    padding: 1.5% 1.5%;
-    /* margin: 10px 0; */
-    /*border: none;*/
-    cursor: pointer;
-    width: 80%;
-    opacity: 0.9;
-}
-
-button:hover {
-    background-color: #7e0a6c;
-    opacity: 0.9;
-}
-
-.addToShake {
-    height: 10vh;
-    position: absolute;
-    /*bottom: 0;*/
-}
-
-/* Поплавок очистить и кнопки регистрации и добавить равную ширину */
-.cancelbtn,
-.signupbtn {
-    float: left;
-    width: 50%;
-}
-
-/* Добавить отступы к элементам контейнера */
-.container {
-    padding: 1%;
-}
-
-/* Модальный (фон) */
-.modal {
-    display: none;
-    /* Скрыто по умолчанию */
-    position: fixed;
-    /* Оставаться на месте */
-    z-index: 1;
-    /* Сидеть на вершине */
-    left: 0;
-    top: 0;
-    width: 100%;
-    /* Полная ширина */
-    height: 100%;
-    /* Полный высота */
-    overflow: auto;
-    /* Включите прокрутку, если это необходимо */
-    background-color: #474e5d;
-    /* padding-top: 50px; */
-
-    /*убирает полосы прокрутки*/
-    overflow: hidden;
-}
-
-/* Модальное Содержание/Бокс */
-.modal-content {
-    background-color: #fefefe;
-    margin: 2% auto 5% auto;
-    /* 5% сверху, 5% снизу и по центру */
-    border: 1px solid #888;
-    width: 80%;
-    /* Может быть больше или меньше, в зависимости от размера экрана */
-}
-
-/* кнопка закрытия (x) */
-.close {
-    position: absolute;
-    right: 2%;
-    top: 2%;
-    font-size: 24px;
-    font-weight: bold;
-    color: #ffd1d1;
-}
-
-.close:hover,
-.close:focus {
-    color: #f44336;
-    cursor: pointer;
-}
-
-/* Снимите поплавки */
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-/* Измените стили для кнопки отмены и кнопки регистрации на дополнительных маленьких экранах */
-@media screen and (max-width: 300px) {
-
-    .cancelbtn,
-    .signupbtn {
-        width: 100%;
-    }
-}
-
-/* ///////////////////////////////////////////////////// */
-
-body {
-    background-image: url("../img.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-div.general_div {
-    display: flex;
-    height: 80vh;
-    /*border: 1px solid red;*/
-}
-
-.form_button_reg {
-    margin: 0px;
-}
-
-nav {
-    background-image: url("../img_2.png");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    float: left;
-    height: 100%;
-    width: 17.5%;
-    margin: 0px;
-    padding: 0px;
-    /*border: 2px solid red;*/
-
-}
-
-.wrap {
-    float: left;
-    display: flex;
-    /*background-color: none;*/
-    /*top: 5%;*/
-    /*left: 50px;*/
-    width: 65%;
-    margin: 0px;
-    position: relative;
-    /*border: 2px solid red;*/
-    justify-content: space-around;
-
-}
-
-
-.form_for_user_date {
-    margin: 0px;
-}
-
-.div-body.wrap {
-    width: 10%;
-    height: 10%;
-    background: red;
-    position: relative;
-    z-index: 10;
-}
-
-footer,
-header {
-    height: 10%;
-
-    /*border: 1px solid;*/
-}
-
-/*aside img {*/
-/*    height: 100%;*/
-/*    width: auto;*/
-/*}*/
-
-aside {
-    background-repeat: no-repeat;
-    background-image: url("../img_1.png");
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: 100% 100%;
-    /*border: 1px solid red;*/
-    height: 100%;
-    width: 17.5%
-}
-
-h3 {
-
+    left: 15%;
     text-align: center;
-    color: #1db074;
-}
-
-h4 {
     color: white;
-}
-
-
-.div-body.wrap:hover .child {
-    height: 25%;
-    transition: ease-in .4s;
-}
-
-.child.wrap {
+    background: linear-gradient(#00000000, transparent);
+    cursor: pointer;
+    width: 70%;
+    height: 10%;
+    border: 0;
     z-index: 1;
+}
+/* <!-- ////////////////////////////////////////////////////////////////////////// --> */
+/* <!-- Left side !!!!! --> */
+nav {
     position: absolute;
-    bottom: 0;
-    left: 0;
-
-    transform: translateY(100%);
-
     width: 10%;
-    height: 0px;
-
-    transition: ease-in .2s;
+    height: 100%;
+    z-index: 0;
 }
-
-.form_checkbox {
-    margin: 5px;
-    padding: 5px;
+.user_info {
+    margin: 0;
 }
-
-#first {
-    /*margin-right: 5%;*/
-    /*margin-left: 5%;*/
-    margin-top: 10%;
-}
-
-#third {
-    /*margin-left: 5%;*/
-    /*margin-right: 5%;*/
-    margin-top: 10%;
-}
-
-#second {
-    margin-top: 10%;
-}
-
-
-form {
-    margin: 8%;
-}
-
-.multiselect {
-    width: 200px;
-
-}
-
-.selectBox {
-    position: relative;
-    opacity: 0.9;
-
-}
-
-.selectBox select {
-    width: 100%;
-    font-weight: bold;
-}
-
-.overSelect {
+/* <!-- ////////////////////////////////////////////////////////////////////////// --> */
+/* <!-- Rigth side !!!!! --> */
+aside {
     position: absolute;
-    left: 0;
-    right: 0;
     top: 0;
-    bottom: 0;
+    right: 0;
+    width: 10%;
+    height: 100%;
+    z-index: 1;
 }
-
-select {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border: 2px solid black;
-}
-div.checkboxes {
-    background-image: url("../bg-label_chekbox.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.checkboxes {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    display: none;
-    border: 1px #dadada solid;
-}
-
-.checkboxes label {
-    border-bottom-start-end-radius: 10px;
-    /*border-bottom-right-radius: 10px;*/
-    display: block;
-    /*background-color: #c19b6e;*/
-    /*background-color: #ca29b2;*/
+.rigth_font {
+    margin-left: 2vh;
     color: white;
-    opacity: 1;
+    background: linear-gradient(#00000000, transparent);
+    text-align: center;
+    z-index: 1;
 }
-
-.checkboxes label:hover {
-    font-family: cursive;
-    text-decoration-line: underline;
-    text-decoration-color: white;
-    /*background-color: #7e0a6c;*/
-    color: white;
-    opacity: 1;
-}
-
-/*select:hover ~ #checkboxes1 {*/
-/*    display: block;*/
-/*}*/
-
-/*.multiselect :hover ~ #checkboxes1 {*/
-/*    display: block;*/
-/*}*/
-
-/*.overSelect:hover ~ #checkboxes1 {*/
-/*    display: block;*/
-/*}*/
-
-/*option:hover ~ #checkboxes1 {*/
-/*    display: block;*/
-/*}*/
-
-/*.selectBox:hover #checkboxes1 {*/
-/*    display: block;*/
-/*}*/
-
-/* ///////////////////////////////////////////////////// */
-
-/*#checkboxes1 {*/
-/*    border-bottom-left-radius: 10px;*/
-/*    border-bottom-right-radius: 10px;*/
-/*    display: none;*/
-/*    border: 1px #dadada solid;*/
-/*}*/
-
-/*#checkboxes1 label {*/
-/*    display: block;*/
-/*    !*background-color: #ca29b2;*!*/
-
-/*    background-image: linear-gradient(to right, #2e1b0c, #c19b6e);*/
-/*    color: white;*/
-/*    opacity: 1;*/
-/*}*/
-
-/*#checkboxes1 label:hover {*/
-/*    font-family: cursive;*/
-/*    text-decoration-line:underline;*/
-/*    text-decoration-color:white;*/
-/*    !*background-color: #7e0a6c;*!*/
-/*    color: white;*/
-/*    opacity: 1;*/
-/*}*/
-
-/* ///////////////////////////////////////////////////// */
-
-
-
-/* ///////////////////////////////////////////////////// */
-
-/*#checkboxes3 {*/
-/*    display: none;*/
-/*    border: 1px #dadada solid;*/
-/*}*/
-
-/*#checkboxes3 label {*/
-/*    display: block;*/
-/*    !*background-color: #ca29b2;*!*/
-/*    background-image: linear-gradient(to left, #2e1b0c, #c19b6e);*/
-/*    color: white;*/
-/*    opacity: 1;*/
-/*}*/
-
-/*#checkboxes3 label:hover {*/
-/*    font-family: cursive;*/
-/*    text-decoration-line:underline;*/
-/*    text-decoration-color:white;*/
-/*    !*background-color: #7e0a6c;*!*/
-/*    color: white;*/
-/*    opacity: 1;*/
-/*}*/
-
-/* ///////////////////////////////////////////////////// */
-
-/* Кнопка выпадающего списка */
-.dropbtn {
-    background-color: #ca29b2;
-    color: white;
-    /*padding: 16px;*/
-    font-size: 16px;
-    border: none;
-    /*min-width: 160px;*/
-    width: 100%;
-    margin-top: 50px;
-
-
-  }
-label{
-    width: 100%;
-}
-
-  /* Контейнер <div> - необходим для размещения выпадающего содержимого */
-  .dropdown {
+/* <!-- ////////////////////////////////////////////////////////////////////////// --> */
+/* <!-- Content !!!!! --> */
+.wrap {
     position: relative;
-    /* display: inline-block; */
-    height: 0;
-  }
-
-  /* Выпадающее содержимое (скрыто по умолчанию) */
-  .dropdown-content {
+    display: inline-flex;
+    justify-content: space-around;
+    top: 15vh;
+    left: 28vh;
+}
+/* Контейнер <div> - необходим для размещения выпадающего содержимого */
+.dropdown {
+    margin-left: 16.2vh;
+}
+.dropbtn {
+    width: 25vh;
+    height: 10vh;
+    border: 0;
+    border-radius: 5vh;
+    background-color: rgba(255, 255, 255, 0.497);
+}
+/* Выпадающее содержимое (скрыто по умолчанию) */
+.dropdown-content {
+    width: 20vh;
+    /* margin-top: 3vh; */
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
-    min-width: 50px;
+    color: white;
+    background: linear-gradient(#00000000, transparent);
+}
+
+/* Показать выпадающее меню при наведении курсора */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Изменение цвета фона кнопки раскрывающегося списка при отображении содержимого раскрывающегося списка */
+.dropdown:hover .dropbtn {
+    background-color: rgba(255, 255, 255, 0.781);
+}
+/*что-бы напитки всегда писались в 1 строку*/
+label{
+    display: block;
+}
+
+/* <!-- ////////////////////////////////////////////////////////////////////////// --> */
+/* <!-- Footer !!!!! --> */
+.shake_button {
+    /*располож. по середин кнопки*/
+    position: relative;
+    top: 60vh;
+    left: 15%;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    background: linear-gradient(#00000000, transparent);
+    cursor: pointer;
+    width: 70%;
+    height: 10%;
+    border: 0;
     z-index: 1;
-  }
+}
 
-  /* Показать выпадающее меню при наведении курсора */
-  .dropdown:hover .dropdown-content {display: block;}
-
-  /* Изменение цвета фона кнопки раскрывающегося списка при отображении содержимого раскрывающегося списка */
-  .dropdown:hover .dropbtn {background-color: #7e0a6c;}
+/* <!-- ////////////////////////////////////////////////////////////////////////// --> */
+span {
+    font-size: large;
+}
