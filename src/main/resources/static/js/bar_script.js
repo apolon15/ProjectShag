@@ -85,17 +85,7 @@ if (logInputValue.length > 0) {
 
 /* /////////////////////////////////////////////////////    TEST   NEW */
 
-$(document).ready(function () {
-    $("#pass, #pass2").keyup(validate);
-});
+// $(document).ready(function () {
+//     $("#pass, #pass2").keyup(validate);
+// });
 
-function validate() {
-    var pass1 = $("#psw").val();
-    var pass2 = $("#psq-repeat").val();
-
-    if (pass1 == pass2) {
-        $("#sw").text("Пароли совпадают");
-    } else {
-        $("#sw").text("Пароли не совпадают");
-    }
-}
