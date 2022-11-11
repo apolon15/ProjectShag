@@ -22,9 +22,9 @@
 
 <body>
 <!-- Registration button !!!!! -->
-<header>
-    <form action="reg.html" method="get" th:action="@{/reg}" th:object="${user}">
-        <button class="registration_button" type="submit"><span id="button_text_change">РЕГИСТРАЦИЯ</span></button>
+<header >
+    <form   method="get" th:action="@{/reg}" th:object="${user}" id="test" >
+        <button class="registration_button" id="button_Re_change" type="submit" onclick="TEST()"><span id="button_text_change"></span></button>
     </form>
 </header>
 <!-- Left side !!!!! -->
@@ -76,22 +76,29 @@
 
         <!-- ////////////////////////////////////////////////////////////////////////// -->
 
-        <div class="dropdown">
-            <button class="dropbtn">Сиропы</button>
-            <div class="dropdown-content">
-                <label th:each="md:${listMD}">
-                    <br>
-                    <input type="checkbox" th:text="${md.getName()}"/>
-                </label>
+        <form id="test01" method="post" th:action="@{/create_cocktails}">
+            <div class="dropdown">
+                <button type="button" class="dropbtn">Сиропы</button>
+                <div class="dropdown-content">
+                    <label th:each="md:${listMD}">
+                        <br>
+                        <input type="checkbox" th:text="${md.getName()}" th:value="${check}"/>
+                    </label>
+                </div>
             </div>
-        </div>
+        </form>
     </div>
 </content>
 
 <!-- Footer !!!!! -->
 <footer>
-    <button type="button" class="shake_button"><span>CREATE COCKTAIL</span></button>
+    <button type="submit" form="test01" class="shake_button"><span>CREATE COCKTAIL</span></button>
 </footer>
+
+<script src="../static/js/bar_script.js"></script>
+<script th:inline="javascript"></script>
+<script type="text/javascript" th:src="@{/js/bar_script.js}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
 </body>
 
