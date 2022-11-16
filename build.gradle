@@ -35,6 +35,12 @@ dependencies {
 
 	// https://mvnrepository.com/artifact/mysql/mysql-connector-java
 	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.30'
+	//https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.7.5'
+
+	//для sec
+//    compileOnly "org.springframework.security:spring-security-web"
+//    compileOnly "org.springframework.security:spring-security-config"
 
 
 }
