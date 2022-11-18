@@ -52,4 +52,9 @@ public class FormController {
         model.addAttribute("user", new UserDto());
         return "reg";
     }
+    @GetMapping("/login")
+    public String loginPage(Model model){
+        model.addAttribute("user", new UserDto());
+        return "login";
+    }
 }
