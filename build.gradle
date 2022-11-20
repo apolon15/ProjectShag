@@ -8,7 +8,7 @@ plugins {
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+sourceCompatibility = "1.8"
 
 configurations {
 	compileOnly {
@@ -39,8 +39,8 @@ dependencies {
 //	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.7.5'
 
 	//для sec
-//    compileOnly "org.springframework.security:spring-security-web"
-//    compileOnly "org.springframework.security:spring-security-config"
+    compileOnly "org.springframework.security:spring-security-web"
+    compileOnly "org.springframework.security:spring-security-config"
 
 
 }
@@ -48,3 +48,4 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
