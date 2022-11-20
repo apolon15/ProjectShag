@@ -35,4 +35,6 @@ public class UserController {
         cocktailService.getPageBar(model);
         return "bar";
     }
+
+
 }

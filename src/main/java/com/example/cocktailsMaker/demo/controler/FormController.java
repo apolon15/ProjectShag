@@ -9,9 +9,12 @@ import com.example.cocktailsMaker.demo.models.LightDrink;
 import com.example.cocktailsMaker.demo.repository.LightDrinkRepository;
 import com.example.cocktailsMaker.demo.repository.MidleDrinkRepository;
 import com.example.cocktailsMaker.demo.repository.StrongDrinkRepository;
+import com.example.cocktailsMaker.demo.security.PersonDetails;
 import com.example.cocktailsMaker.demo.service.UserService;
 import com.example.cocktailsMaker.demo.service.implem.CocktailServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -44,6 +47,12 @@ public class FormController {
     public String barPage(Model model) {
         model.addAttribute("user", new UserDto());
         cocktailService.getPageBar(model);
+
+//тестовый код. после аутентификации пишет имя пользователя слева на странице. Будет переделываться под форму ВХОДА
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        PersonDetails personDetails = (PersonDetails) authentication.getPrincipal();
+        model.addAttribute("name_top",personDetails.getUsername());
+
         return "bar";
     }
 
@@ -52,8 +61,9 @@ public class FormController {
         model.addAttribute("user", new UserDto());
         return "reg";
     }
+
     @GetMapping("/login")
-    public String loginPage(Model model){
+    public String loginPage(Model model) {
         model.addAttribute("user", new UserDto());
         return "login";
     }
