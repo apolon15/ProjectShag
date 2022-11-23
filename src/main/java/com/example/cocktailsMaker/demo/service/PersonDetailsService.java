@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -24,11 +25,11 @@ public class PersonDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
-        Optional<User> user = userRepository.findUserByName(name);
-        if (!user.isPresent()) {
+        User user = userRepository.findUserByName(name).orElse(null);
+        if (Objects.isNull(user)) {
             throw new UsernameNotFoundException("Такого нет в базе");
         }
-        return new PersonDetails(user.get());
+        return new PersonDetails(user);
     }
 }
 

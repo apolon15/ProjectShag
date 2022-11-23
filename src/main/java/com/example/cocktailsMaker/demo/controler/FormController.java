@@ -47,12 +47,6 @@ public class FormController {
     public String barPage(Model model) {
         model.addAttribute("user", new UserDto());
         cocktailService.getPageBar(model);
-
-//тестовый код. после аутентификации пишет имя пользователя слева на странице. Будет переделываться под форму ВХОДА
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        PersonDetails personDetails = (PersonDetails) authentication.getPrincipal();
-        model.addAttribute("name_top",personDetails.getUsername());
-
         return "bar";
     }
 
@@ -64,7 +58,7 @@ public class FormController {
 
     @GetMapping("/login")
     public String loginPage(Model model) {
-        model.addAttribute("user", new UserDto());
+//        model.addAttribute("user", new UserDto());
         return "login";
     }
 }

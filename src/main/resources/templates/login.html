@@ -20,27 +20,24 @@
 </head>
 <body>
 <div id="id01" class="modal">
-    <form class="modal-content" action="/save/user" method="post" th:action="@{/save/user}" th:object="${user}">
-
+    <form class="modal-content" action="/login/user" method="post" th:action="@{/login/user}">
         <h1>Вход в личный кабинет</h1>
-        <!--                <span onclick="document.getElementById('id01').style.display='none'"-->
-        <!--                                                 class="close" title="Закрыть модальный">BACK</span>-->
         <label><b>Ваше имя</b></label>
-        <input id="form_name" th:field=*{name} type="text" placeholder="Введите вашу имя" required
+        <input name="username" id="form_name" type="text" placeholder="Введите вашу имя" required
                oninvalid="this.setCustomValidity('Вы не указали имя')" oninput="this.setCustomValidity(``)">
         <label><b>Пароль</b></label>
-        <input id="form_pass" type="password" th:field=*{pass} placeholder="Введите пароль" required
+        <input name="password" id="form_pass" type="password" placeholder="Введите пароль" required
                oninvalid="this.setCustomValidity('Вы не указали пароль')" oninput="this.setCustomValidity(``)">
-        <label>
-            <input type="checkbox" checked="checked" name="remember"> Запомнить меня
-        </label>
 
+        <!--        <label>-->
+        <!--            <input type="checkbox" checked="checked" name="remember"> Запомнить меня-->
+        <!--        </label>-->
+        <div th:if="${error}"  th:text="${Неправильное имя или пароль}"style="color:red"></div>
         <button type="submit" class="signup"><h3>Войти</h3></button>
     </form>
 </div>
 <script th:inline="javascript"></script>
 <script type="text/javascript" th:src="@{/js/reg_script.js}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-
 </body>
 </html>

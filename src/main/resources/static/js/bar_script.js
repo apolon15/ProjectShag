@@ -11,7 +11,7 @@ if (logInputValue.length > 0) {
     $(`#test`).attr('action','/index');
 } else {
     nameInner = false;
-    buttonText.innerHTML = "РЕГИСТРАЦИЯ";
+    buttonText.innerHTML = "РЕГИСТРАЦИЯ ИЛИ ВХОД";
     $(`#test`).attr('action','/reg');
 }
 /* ///////////////////////////////////////////////////// */
