@@ -9,9 +9,12 @@ import com.example.cocktailsMaker.demo.models.LightDrink;
 import com.example.cocktailsMaker.demo.repository.LightDrinkRepository;
 import com.example.cocktailsMaker.demo.repository.MidleDrinkRepository;
 import com.example.cocktailsMaker.demo.repository.StrongDrinkRepository;
+import com.example.cocktailsMaker.demo.security.PersonDetails;
 import com.example.cocktailsMaker.demo.service.UserService;
 import com.example.cocktailsMaker.demo.service.implem.CocktailServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,10 +44,21 @@ public class FormController {
     /* метод при переходе на страницу index подгружает из таблицы все напитки и алко*/
 
     @GetMapping("/bar/without/reg")
-    public String barPage(Model model){
+    public String barPage(Model model) {
         model.addAttribute("user", new UserDto());
         cocktailService.getPageBar(model);
         return "bar";
     }
 
+    @GetMapping("/reg")
+    public String regPage(Model model) {
+        model.addAttribute("user", new UserDto());
+        return "reg";
+    }
+
+    @GetMapping("/login")
+    public String loginPage(Model model) {
+//        model.addAttribute("user", new UserDto());
+        return "login";
+    }
 }

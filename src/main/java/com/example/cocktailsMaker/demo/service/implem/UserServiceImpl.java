@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
         user.setMail(userDto.getMail());
         user.setPass(userDto.getPass());
 //        saveUser(user);
-        userDto.setId(userRepository.findByMail(user.getMail()).getId());
+//        userDto.setId(userRepository.findByMail(user.getMail()).getId());
         return userDto.getId();
     }
 

@@ -1,370 +1,140 @@
-/*убирает полосы прокрутки*/
+/* убирает полосы прокрутки */
 html {
     overflow: hidden;
 }
-
-/*убирает ID*/
-.NO {
-    visibility: hidden;
-}
-
+/* <!-- ////////////////////////////////////////////////////////////////////////// --> */
+/* <!-- BG Main !!!!! --> */
 .bg {
     position: absolute;
     top: 0;
     left: 0;
     /* закрепить сверху-слева */
-
     width: 100%;
     height: 100%;
-
+    /* для ровной картинки */
+    object-fit: cover;
+    z-index: 0;
+}
+.bg_inside {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    /* закрепить сверху-слева */
+    width: 80%;
+    height: 100%;
     object-fit: cover;
     /* для ровной картинки */
+    z-index: 0;
 }
-
-/* code for form registration !!!!! */
-* {
-    box-sizing: border-box
-}
-
-.first_input {
-    display: inline;
-    z-index: 2;
-
-}
-
-/* Поля ввода полной ширины */
-input[type=text],
-input[type=password] {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0 15px 0;
-    display: inline-block;
-    border: none;
-    background: #f1f1f1;
-}
-
-/* Добавить цвет фона, когда входы получают фокус */
-input[type=text]:focus,
-input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-}
-
-/* Установите стиль для всех кнопок */
-button {
+/* <!-- ////////////////////////////////////////////////////////////////////////// --> */
+/* <!-- Registration button !!!!! --> */
+.registration_button {
     /*располож. по середин кнопки*/
     position: relative;
-    left: 50%;
-    transform: translate(-50%, 0);
-
-    background-color: #ca29b2;
-    color: white;
-    padding: 15px 15px;
-    /* margin: 10px 0; */
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    opacity: 0.9;
-}
-
-button:hover {
-    background-color: #7e0a6c;
-    opacity: 0.9;
-}
-
-.addToShake {
-    position: absolute;
-    bottom: 0;
-}
-
-/* Поплавок очистить и кнопки регистрации и добавить равную ширину */
-.cancelbtn,
-.signupbtn {
-    float: left;
-    width: 50%;
-}
-
-/* Добавить отступы к элементам контейнера */
-.container {
-    padding: 8px;
-}
-
-/* Модальный (фон) */
-.modal {
-    display: none;
-    /* Скрыто по умолчанию */
-    position: fixed;
-    /* Оставаться на месте */
-    z-index: 1;
-    /* Сидеть на вершине */
-    left: 0;
-    top: 0;
-    width: 100%;
-    /* Полная ширина */
-    height: 100%;
-    /* Полный высота */
-    overflow: auto;
-    /* Включите прокрутку, если это необходимо */
-    background-color: #474e5d;
-    /* padding-top: 50px; */
-
-    /*убирает полосы прокрутки*/
-    overflow: hidden;
-}
-
-/* Модальное Содержание/Бокс */
-.modal-content {
-    background-color: #fefefe;
-    margin: 5% auto 5% auto;
-    /* 5% сверху, 5% снизу и по центру */
-    border: 1px solid #888;
-    width: 80%;
-    /* Может быть больше или меньше, в зависимости от размера экрана */
-}
-
-/* кнопка закрытия (x) */
-.close {
-    position: absolute;
-    right: 20px;
-    top: 18px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #ffd1d1;
-}
-
-.close:hover,
-.close:focus {
-    color: #f44336;
-    cursor: pointer;
-}
-
-/* Снимите поплавки */
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-/* Измените стили для кнопки отмены и кнопки регистрации на дополнительных маленьких экранах */
-@media screen and (max-width: 300px) {
-
-    .cancelbtn,
-    .signupbtn {
-        width: 100%;
-    }
-}
-
-/* ///////////////////////////////////////////////////// */
-
-body {
-    background-image: url("../backFonePage2.jpg");
-    background-size: cover;
-}
-
-div.general_div {
-    display: flex;
-    height: 80%;
-    border: 5px solid red;
-}
-
-nav {
-
-    float: left;
-    height: 50%;
-    width: 17.5%;
-    margin: 0px;
-    padding: 0px;
-    border: 2px solid red;
-
-}
-
-.wrap {
-    float: left;
-    display: flex;
-    /*background-color: none;*/
-    top: 50px;
-    /*left: 50px;*/
-    width: 65%;
-    margin: 0px;
-    position: relative;
-    border: 2px solid red;
-}
-
-.form_for_user_date {
-    margin: 0px;
-}
-
-.div-body.wrap {
-    width: 100px;
-    height: 100px;
-    background: red;
-    position: relative;
-    z-index: 10;
-}
-
-
-h4 {
-    color: #ca29b2;
-}
-
-footer, header {
-    height: 10%;
-    border: 2px solid red;
-}
-
-aside img {
-    height: 100%;
-    width: auto;
-}
-
-aside {
-    background-repeat: no-repeat;
-    background-image: url("../mirror.png");
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    border: 2px solid red;
-    height: 100%;
-    width: 17.5%
-}
-
-h3 {
+    left: 15%;
     text-align: center;
-    color: #1db074;
-}
-
-
-.div-body.wrap:hover .child {
-    height: 250px;
-    transition: ease-in .4s;
-}
-
-.child.wrap {
+    color: white;
+    background: linear-gradient(#00000000, transparent);
+    cursor: pointer;
+    width: 70%;
+    height: 10%;
+    border: 0;
     z-index: 1;
+}
+/* <!-- ////////////////////////////////////////////////////////////////////////// --> */
+/* <!-- Left side !!!!! --> */
+nav {
     position: absolute;
-    bottom: 0;
-    left: 0;
-
-    transform: translateY(100%);
-
-    width: 100px;
-    height: 0px;
-
-    transition: ease-in .2s;
+    width: 10%;
+    height: 100%;
+    z-index: 1;
 }
-
-.form_checkbox {
-    margin: 5px;
-    padding: 5px;
+h4{
+    color: white;
 }
+.user_info {
+    margin: 0;
 
-#first {
-    margin-right: 11%;
-    margin-left: 7%;
-    margin-top: 90px;
 }
-
-#third {
-    margin-left: 11%;
-    margin-right: 7%;
-    margin-top: 90px;
-}
-
-#second {
-    margin-top: 90px;
-}
-
-
-form {
-    margin: 8%;
-}
-
-.multiselect {
-    width: 200px;
-}
-
-.selectBox {
-    position: relative;
-
-    opacity: 0.9;
-}
-
-.selectBox select {
-    width: 100%;
-    font-weight: bold;
-}
-
-.overSelect {
+/* <!-- ////////////////////////////////////////////////////////////////////////// --> */
+/* <!-- Rigth side !!!!! --> */
+aside {
     position: absolute;
-    left: 0;
-    right: 0;
     top: 0;
-    bottom: 0;
+    right: 0;
+    width: 10%;
+    height: 100%;
+    z-index: 1;
 }
-
-/* ///////////////////////////////////////////////////// */
-
-#checkboxes1 {
+.rigth_font {
+    margin-left: 2vh;
+    color: white;
+    background: linear-gradient(#00000000, transparent);
+    text-align: center;
+    z-index: 1;
+}
+/* <!-- ////////////////////////////////////////////////////////////////////////// --> */
+/* <!-- Content !!!!! --> */
+.wrap {
+    position: relative;
+    display: inline-flex;
+    justify-content: space-around;
+    top: 15vh;
+    left: 28vh;
+}
+/* Контейнер <div> - необходим для размещения выпадающего содержимого */
+.dropdown {
+    margin-left: 16.2vh;
+}
+.dropbtn {
+    width: 25vh;
+    height: 10vh;
+    border: 0;
+    border-radius: 5vh;
+    background-color: rgba(255, 255, 255, 0.497);
+}
+/* Выпадающее содержимое (скрыто по умолчанию) */
+.dropdown-content {
+    width: 20vh;
+    /* margin-top: 3vh; */
     display: none;
-    border: 1px #dadada solid;
+    position: absolute;
+    color: white;
+    background: linear-gradient(#00000000, transparent);
 }
 
-#checkboxes1 label {
+/* Показать выпадающее меню при наведении курсора */
+.dropdown:hover .dropdown-content {
     display: block;
-
-    background-color: #ca29b2;
-    color: white;
-    opacity: 0.9;
 }
 
-#checkboxes1 label:hover {
-    background-color: #7e0a6c;
-    color: white;
-    opacity: 0.9;
+/* Изменение цвета фона кнопки раскрывающегося списка при отображении содержимого раскрывающегося списка */
+.dropdown:hover .dropbtn {
+    background-color: rgba(255, 255, 255, 0.781);
 }
-
-/* ///////////////////////////////////////////////////// */
-
-#checkboxes2 {
-    display: none;
-    border: 1px #dadada solid;
-}
-
-#checkboxes2 label {
+/*что-бы напитки всегда писались в 1 строку*/
+label{
     display: block;
-
-    background-color: #ca29b2;
-    color: white;
-    opacity: 0.9;
 }
 
-#checkboxes2 label:hover {
-    background-color: #7e0a6c;
-    color: white;
-    opacity: 0.9;
+/* <!-- ////////////////////////////////////////////////////////////////////////// --> */
+/* <!-- Footer !!!!! --> */
+.shake_button {
+    /*располож. по середин кнопки*/
+    position: relative;
+    top: 60vh;
+    left: 15%;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    background: linear-gradient(#00000000, transparent);
+    cursor: pointer;
+    width: 70%;
+    height: 10%;
+    border: 0;
+    z-index: 1;
 }
 
-/* ///////////////////////////////////////////////////// */
-
-#checkboxes3 {
-    display: none;
-    border: 1px #dadada solid;
+/* <!-- ////////////////////////////////////////////////////////////////////////// --> */
+span {
+    font-size: large;
 }
-
-#checkboxes3 label {
-    display: block;
-
-    background-color: #ca29b2;
-    color: white;
-    opacity: 0.9;
-}
-
-#checkboxes3 label:hover {
-    background-color: #7e0a6c;
-    color: white;
-    opacity: 0.9;
-}
-
-/* ///////////////////////////////////////////////////// */
