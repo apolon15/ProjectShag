@@ -8,7 +8,7 @@ var nameInner;
 if (logInputValue.length > 0) {
     nameInner = true;
     buttonText.innerHTML = "ВЫХОД";
-    $(`#test`).attr('action','/index');
+    $(`#test`).attr('action','/logout');
 } else {
     nameInner = false;
     buttonText.innerHTML = "РЕГИСТРАЦИЯ ИЛИ ВХОД";

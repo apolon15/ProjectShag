@@ -43,7 +43,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin().loginPage("/login")
                 .loginProcessingUrl("/login/user")
                 .defaultSuccessUrl("/login/user", true)
-                .failureUrl("/login?error");
+                .failureUrl("/login?error")
+                .and().logout().deleteCookies("remove").invalidateHttpSession(false)
+                .logoutUrl("/logout").logoutSuccessUrl("/index");
+
     }
 
     //настраивает уатентификацию
