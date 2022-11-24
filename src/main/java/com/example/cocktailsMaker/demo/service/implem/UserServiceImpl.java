@@ -18,12 +18,19 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public int dtoToUser(UserDto userDto) {
         User user = new User();
-        user.setName(userDto.getName());
+        user.setUsername(userDto.getName());
         user.setMail(userDto.getMail());
-        user.setPass(userDto.getPass());
+        user.setPassword(userDto.getPass());
 //        saveUser(user);
 //        userDto.setId(userRepository.findByMail(user.getMail()).getId());
         return userDto.getId();
+    }
+
+    @Transactional
+    @Override
+    public void registerUser(User user) {
+        userRepository.save(user);
+
     }
 
     @Override

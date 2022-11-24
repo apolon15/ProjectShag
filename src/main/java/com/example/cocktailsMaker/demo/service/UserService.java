@@ -12,4 +12,8 @@ public interface UserService {
     User saveUser(UserDto user);
 
     public UserDto getUserById(Integer id);
+
+    public void registerUser(User user);
+
+
 }

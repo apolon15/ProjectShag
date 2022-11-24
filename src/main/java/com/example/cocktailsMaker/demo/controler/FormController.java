@@ -18,6 +18,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.Objects;
@@ -51,8 +52,8 @@ public class FormController {
     }
 
     @GetMapping("/reg")
-    public String regPage(Model model) {
-        model.addAttribute("user", new UserDto());
+    public String regPage(@ModelAttribute("user") User user) {
+//        model.addAttribute("user", new UserDto());
         return "reg";
     }
 
