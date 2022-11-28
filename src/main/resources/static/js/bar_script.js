@@ -8,13 +8,38 @@ var nameInner;
 if (logInputValue.length > 0) {
     nameInner = true;
     buttonText.innerHTML = "ВЫХОД";
-    $(`#test`).attr('action','/logout');
+    $(`#test`).attr('action', '/logout');
 } else {
     nameInner = false;
     buttonText.innerHTML = "РЕГИСТРАЦИЯ ИЛИ ВХОД";
-    $(`#test`).attr('action','/reg');
+    $(`#test`).attr('action', '/reg');
 }
+
 /* ///////////////////////////////////////////////////// */
+//https://siterost.net/post/jquery-checkbox#:~:text=Чтобы%20получить%20значение%20чекбокса%2C%20как,отфильтровать%20при%20помощи%20псевдокласса%20%3Achecked
+// jQuery(document).ready(function($){
+//
+//     $('button').on('click', function(){
+//         var values = [];
+//         $('[name="first_name"]:checked').each(function(){
+//             values.push($(this).val());
+//         });
+//
+//         alert(values.join(', '));
+//     });
+//
+// });
+//
+// }
+function checkbox(){
+    var inputElements  = document.getElementsByClassName('input_value');
+    var checkedValue = new Array();
+    for(var i=0; i<=inputElements.length-1;i++){
+        if(inputElements[i].checked){
+            checkedValue.push(inputElements[i].value);
+        }
+    }
+}
 
 
 // var expanded1 = false;

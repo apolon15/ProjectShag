@@ -58,7 +58,7 @@
             <div class="dropdown-content">
                 <label th:each="sd:${listSD}">
                     <br>
-                    <input type="checkbox" th:text="${sd.getName()}" class="test1"/>
+                    <input  class="input_value"  type="checkbox"  th:value="${sd.getName()}" th:text="${sd.getName()}" />
                 </label>
             </div>
         </div>
@@ -69,20 +69,20 @@
             <div class="dropdown-content">
                 <label th:each="ld:${listLD}">
                     <br>
-                    <input type="checkbox" th:text="${ld.getName()}"/>
+                    <input  class="input_value"  type="checkbox"  th:value="${ld.getName()}" th:text="${ld.getName()}" />
                 </label>
             </div>
         </div>
 
         <!-- ////////////////////////////////////////////////////////////////////////// -->
 
-        <form id="test01" method="post" th:action="@{/create_cocktails}">
+        <form id="test01" method="post" th:action="@{/create_cocktails}" >
             <div class="dropdown">
                 <button type="button" class="dropbtn">Сиропы</button>
-                <div class="dropdown-content">
-                    <label th:each="md:${listMD}">
+                <div class="dropdown-content" >
+                    <label th:each="md:${listMD}" >
                         <br>
-                        <input type="checkbox" th:text="${md.getName()}" th:value="${check}"/>
+                        <input  class="input_value"  type="checkbox"  th:value="${md.getName()}" th:text="${md.getName()}" />
                     </label>
                 </div>
             </div>
@@ -92,7 +92,7 @@
 
 <!-- Footer !!!!! -->
 <footer>
-    <button type="button" form="test01" class="shake_button"><span>CREATE COCKTAIL</span></button>
+    <button type="submit" form="test01" class="shake_button" onclick="checkbox()"><span>CREATE COCKTAIL</span></button>
 </footer>
 
 <!--<script src="../static/js/bar_script.js"></script>-->
