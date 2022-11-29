@@ -29,8 +29,7 @@
         <label><b>Ваше имя</b></label>
         <input id="form_name" th:field=*{username} type="text" placeholder="Введите ваш ник" required
                oninvalid="this.setCustomValidity('Вы не указали ник')" oninput="this.setCustomValidity(``)">
-        <div style="font-style: italic; color:red;" th:if="${#fields.hasErrors}" th:error="${username}">Пользователь с
-            таким ником существует
+        <div style="font-style: italic; color:red;" th:if="${#fields.hasErrors}" th:error="${username}" th:each="err : ${#fields.errors('username')}" th:text="${err}">
         </div>
         <label><b>Email</b></label>
         <input id="form_mail" th:field=*{mail} type="text" placeholder="Введите вашу почту" required

@@ -1,5 +1,6 @@
 package com.example.cocktailsMaker.demo.controler;
 
+import com.example.cocktailsMaker.demo.dto.CocktailDto;
 import com.example.cocktailsMaker.demo.dto.UserDto;
 import com.example.cocktailsMaker.demo.models.User;
 import com.example.cocktailsMaker.demo.security.PersonDetails;
@@ -48,7 +49,7 @@ public class UserController {
 //    }
 
     @GetMapping("/login/user")
-    public String loginUser(Model model) {
+    public String loginUser(@ModelAttribute("cocktail") CocktailDto cocktailDto,Model model) {
 //        User user = userService.saveUser(userDto);
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         PersonDetails personDetails = (PersonDetails) authentication.getPrincipal();

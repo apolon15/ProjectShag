@@ -33,5 +33,6 @@ public class UserValidator implements Validator {
             return;//все ок. Такого пользователя нет в базе. Можно регить
         }
         errors.rejectValue("username", "", "Человек с таким ником существует");
+
     }
 }

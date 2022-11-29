@@ -6,6 +6,7 @@ import com.example.cocktailsMaker.demo.models.User;
 import com.example.cocktailsMaker.demo.repository.UserRepository;
 import com.example.cocktailsMaker.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,6 +14,8 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Override
     @Transactional
@@ -29,6 +32,10 @@ public class UserServiceImpl implements UserService {
     @Transactional
     @Override
     public void registerUser(User user) {
+        //шифрование пароля при регистрации
+        String codePass = passwordEncoder.encode(user.getPassword());
+        //заменяем старый пароль зашифрованным перед сохранением
+        user.setPassword(codePass);
         userRepository.save(user);
 
     }
