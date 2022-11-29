@@ -15,8 +15,8 @@ public class UserMapper {
                 UserDto.builder()
                         .id(user.getId())
                         .mail(user.getMail())
-                        .name(user.getName())
-                        .pass(user.getPass())
+                        .name(user.getUsername())
+                        .pass(user.getPassword())
                         .build() : null;
     }
 
@@ -25,8 +25,8 @@ public class UserMapper {
                 User.builder()
                         .id(userDto.getId())
                         .mail(userDto.getMail())
-                        .name(userDto.getName())
-                        .pass(userDto.getPass())
+                        .username(userDto.getName())
+                        .password(userDto.getPass())
                         .build() : null;
     }
 

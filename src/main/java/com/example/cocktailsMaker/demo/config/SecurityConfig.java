@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -43,17 +44,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin().loginPage("/login")
                 .loginProcessingUrl("/login/user")
                 .defaultSuccessUrl("/login/user", true)
-                .failureUrl("/login?error");
+                .failureUrl("/login?error")
+                .and().logout().deleteCookies("remove").invalidateHttpSession(true)
+                .deleteCookies("JSESSIONID").logoutUrl("/logout").logoutSuccessUrl("/index");
+
     }
 
     //настраивает уатентификацию
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(personDetailsService);
+        auth.userDetailsService(personDetailsService)
+        //шифрование пароля при аутентификации
+                .passwordEncoder(getPassEncoder());
     }
 
     @Bean
     public PasswordEncoder getPassEncoder() {
-        return NoOpPasswordEncoder.getInstance();
+        return new BCryptPasswordEncoder();
     }
-
 }
+
+

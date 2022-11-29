@@ -20,12 +20,12 @@ public class PersonDetails implements UserDetails {
 
     @Override
     public String getPassword() {
-        return this.user.getPass();
+        return this.user.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return this.user.getName();
+        return this.user.getUsername();
     }
 
     public String getUserMail() {
