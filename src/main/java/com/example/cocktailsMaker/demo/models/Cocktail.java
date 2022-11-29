@@ -8,9 +8,8 @@ import javax.persistence.*;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 @ToString
-
+@Entity
 public class Cocktail {
 
     @Id

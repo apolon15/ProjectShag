@@ -1,27 +1,14 @@
 package com.example.cocktailsMaker.demo.controler;
 
-
+import com.example.cocktailsMaker.demo.dto.CocktailDto;
 import com.example.cocktailsMaker.demo.dto.UserDto;
-import com.example.cocktailsMaker.demo.models.MidleDrink;
-import com.example.cocktailsMaker.demo.models.StrongDrink;
 import com.example.cocktailsMaker.demo.models.User;
-import com.example.cocktailsMaker.demo.models.LightDrink;
-import com.example.cocktailsMaker.demo.repository.LightDrinkRepository;
-import com.example.cocktailsMaker.demo.repository.MidleDrinkRepository;
-import com.example.cocktailsMaker.demo.repository.StrongDrinkRepository;
-import com.example.cocktailsMaker.demo.security.PersonDetails;
-import com.example.cocktailsMaker.demo.service.UserService;
 import com.example.cocktailsMaker.demo.service.implem.CocktailServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-
-import java.util.Objects;
 
 @Controller
 public class FormController {
@@ -45,8 +32,9 @@ public class FormController {
     /* метод при переходе на страницу index подгружает из таблицы все напитки и алко*/
 
     @GetMapping("/bar/without/reg")
-    public String barPage(Model model) {
+    public String barPage( Model model) {
         model.addAttribute("user", new UserDto());
+        model.addAttribute("cocktail", new CocktailDto());
         cocktailService.getPageBar(model);
         return "bar";
     }
