@@ -40,12 +40,8 @@
         <label><b>Повторить пароль</b></label>
         <input id="form_pass_rep" type="password" placeholder="Повторите пароль" name="psw-repeat" required
                oninvalid="this.setCustomValidity('Вы не указали пароль')" oninput="this.setCustomValidity(``)">
-        <!--        <label>-->
-        <!--            <input type="checkbox" checked="checked" name="remember"> Запомнить меня-->
-        <!--        </label>-->
         <p>Создавая учетную запись, вы соглашаетесь с нашим <a href="#" style="color:dodgerblue">Условия и
             конфиденциальность</a>.</p>
-
         <button type="submit" onclick="validate()" class="signup"><h3>Регистрация</h3></button>
         <a th:href="@{../login}">
             <button type="button" class="login"><h3>Уже зарегистрирован. Вход</h3></button>
