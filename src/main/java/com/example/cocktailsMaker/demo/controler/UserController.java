@@ -59,14 +59,14 @@ public class UserController {
         return "/bar";
     }
 
-    @GetMapping("/save/user/{id}")
-    public String getRedirectPage(@PathVariable(required = false) Integer id, Model model) {
-        UserDto userDto = userService.getUserById(id);
-        model.addAttribute("user", userDto);
-        model.addAttribute("name_top", userDto.getName());
-        cocktailService.getPageBar(model);
-        return "bar";
-    }
+//    @GetMapping("/save/user/{id}")
+//    public String getRedirectPage(@PathVariable(required = false) Integer id, Model model) {
+//        UserDto userDto = userService.getUserById(id);
+//        model.addAttribute("user", userDto);
+//        model.addAttribute("name_top", userDto.getName());
+//        cocktailService.getPageBar(model);
+//        return "bar";
+//    }
 
 
 }

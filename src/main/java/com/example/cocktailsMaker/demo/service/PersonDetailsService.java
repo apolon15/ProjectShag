@@ -15,15 +15,11 @@ import java.util.Optional;
 
 @Service
 public class PersonDetailsService implements UserDetailsService {
-
     private final UserRepository userRepository;
-
     @Autowired
     public PersonDetailsService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-
-
     @Override
     public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
         User user = userRepository.findUserByUsername(name).orElse(null);

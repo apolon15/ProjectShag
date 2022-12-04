@@ -56,7 +56,7 @@ public class CocktailServiceImpl implements CocktailService {
         Set<String> ingr = prepareIngr(cocktailDto);
         if (!ingr.isEmpty()) {
             for (String ingrd : ingr) {
-                cocktails.addAll(repository.findAllByStructureIsLike(ingrd));
+                cocktails.addAll(repository.findAllByStructureContaining(ingrd));
             }
             list = new ArrayList<>(cocktails);
         }
