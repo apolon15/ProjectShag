@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @Service
 public class CocktailServiceImpl implements CocktailService {
@@ -50,7 +49,7 @@ public class CocktailServiceImpl implements CocktailService {
     }
 
     @Override
-    public List<Cocktail> findCoctailsByIngr(CocktailDto cocktailDto) {
+    public List<Cocktail> findCocktailsByIngr(CocktailDto cocktailDto) {
         List<Cocktail> list = new ArrayList<>();
         Set<Cocktail> cocktails = new HashSet<>();
         Set<String> ingr = prepareIngr(cocktailDto);
@@ -61,6 +60,11 @@ public class CocktailServiceImpl implements CocktailService {
             list = new ArrayList<>(cocktails);
         }
         return list;
+    }
+    @Override
+    public Cocktail findCocktailById(Integer id){
+       Cocktail cocktail= repository.findCocktailById(id);
+        return cocktail;
     }
 
     private Set<String> prepareIngr(CocktailDto cocktailDto) {

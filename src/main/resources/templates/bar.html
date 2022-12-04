@@ -32,14 +32,22 @@
 <nav>
     <form class="user_info">
         <label>
-            <h4 id="text_log_name" th:text="${name_top}" ></h4>
+            <h4 id="text_log_name" th:text="${name_top}"></h4>
         </label>
     </form>
 </nav>
 <!-- Rigth side !!!!! -->
 <aside>
-    <br><br><br><br><br><br><br><br><br><br>
-    <span class="rigth_font">Сюда должен выводиться рецепт</span>
+    <label th:each="listC:${listCocktails}">
+        <br>
+        <form method="post" th:action="@{/get_cocktail/(id=${listC.getId()})}">
+            <button type="submit" th:value="${listC.getId}"
+                    th:text="${listC.getName()}"></button>
+        </form>
+    </label>
+
+    <!--    <br><br><br><br><br><br><br><br><br><br>-->
+    <!--    <span class="rigth_font">Сюда должен выводиться рецепт</span>-->
 </aside>
 <!-- Images !!!!! -->
 <main>
@@ -50,8 +58,8 @@
 
 <!-- Content !!!!! -->
 <content>
-    <form id="test01" method="post" th:action="@{/create_cocktails}" th:object="${cocktail}"  >
-        <div th:object="${userDto}" ></div>
+    <form id="test01" method="post" th:action="@{/create_cocktails}" th:object="${cocktail}">
+        <div th:object="${userDto}"></div>
         <div class="wrap">
 
             <!-- ////////////////////////////////////////////////////////////////////////// -->

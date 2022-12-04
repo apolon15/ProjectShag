@@ -11,5 +11,8 @@ public interface CocktailService{
 
     void getPageBar(Model model);
 
-    List<Cocktail> findCoctailsByIngr(CocktailDto cocktailDto);
+    List<Cocktail> findCocktailsByIngr(CocktailDto cocktailDto);
+
+    Cocktail findCocktailById(Integer id);
+
 }
