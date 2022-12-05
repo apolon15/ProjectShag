@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
 import javax.validation.Valid;
 
 
@@ -34,10 +35,8 @@ public class UserController {
     @PostMapping("/save/user")
     public String saveUser(@ModelAttribute("user") @Valid User user, BindingResult bindingresult) {
         userValidator.validate(user, bindingresult);
-        if (bindingresult.hasErrors())
-            return "/reg";
+        if (bindingresult.hasErrors()) return "/reg";
         userService.registerUser(user);
-
         return "redirect:/login";
 //        return "redirect:/save/user/" + user.getId();
     }
@@ -49,7 +48,7 @@ public class UserController {
 //    }
 
     @GetMapping("/login/user")
-    public String loginUser(@ModelAttribute("cocktail") CocktailDto cocktailDto,Model model) {
+    public String loginUser(@ModelAttribute("cocktail") CocktailDto cocktailDto, Model model) {
 //        User user = userService.saveUser(userDto);
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         PersonDetails personDetails = (PersonDetails) authentication.getPrincipal();
@@ -60,14 +59,14 @@ public class UserController {
         return "/bar";
     }
 
-    @GetMapping("/save/user/{id}")
-    public String getRedirectPage(@PathVariable(required = false) Integer id, Model model) {
-        UserDto userDto = userService.getUserById(id);
-        model.addAttribute("user", userDto);
-        model.addAttribute("name_top", userDto.getName());
-        cocktailService.getPageBar(model);
-        return "bar";
-    }
+//    @GetMapping("/save/user/{id}")
+//    public String getRedirectPage(@PathVariable(required = false) Integer id, Model model) {
+//        UserDto userDto = userService.getUserById(id);
+//        model.addAttribute("user", userDto);
+//        model.addAttribute("name_top", userDto.getName());
+//        cocktailService.getPageBar(model);
+//        return "bar";
+//    }
 
 
 }

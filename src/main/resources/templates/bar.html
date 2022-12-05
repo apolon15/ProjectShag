@@ -38,8 +38,16 @@
 </nav>
 <!-- Rigth side !!!!! -->
 <aside>
-    <br><br><br><br><br><br><br><br><br><br>
-    <span class="rigth_font">Сюда должен выводиться рецепт</span>
+    <label th:each="listC:${listCocktails}">
+        <br>
+        <form method="post" th:action="@{/get_cocktail/(id=${listC.getId()})}">
+            <button type="submit" th:value="${listC.getId}"
+                    th:text="${listC.getName()}"></button>
+        </form>
+    </label>
+
+    <!--    <br><br><br><br><br><br><br><br><br><br>-->
+    <!--    <span class="rigth_font">Сюда должен выводиться рецепт</span>-->
 </aside>
 <!-- Images !!!!! -->
 <main>
@@ -51,6 +59,7 @@
 <!-- Content !!!!! -->
 <content>
     <form id="test01" method="post" th:action="@{/create_cocktails}" th:object="${cocktail}">
+        <div th:object="${userDto}"></div>
         <div class="wrap">
 
             <!-- ////////////////////////////////////////////////////////////////////////// -->
@@ -62,7 +71,7 @@
                     <label th:each="sd:${listSD}">
                         <br>
                         <input class="input_value" type="checkbox" th:value="${sd.getName()}"
-                               th:text="${sd.getName()}" th:field="*{strongDrink}"/>
+                               th:text="${sd.getName()}" th:field="*{strongDrinks}"/>
                     </label>
                 </div>
             </div>
@@ -74,7 +83,7 @@
                     <label th:each="ld:${listLD}">
                         <br>
                         <input class="input_value" type="checkbox" th:value="${ld.getName()}"
-                               th:text="${ld.getName()}" th:field="*{lightDrink}"/>
+                               th:text="${ld.getName()}" th:field="*{lightDrinks}"/>
                     </label>
                 </div>
             </div>
@@ -88,7 +97,7 @@
                     <label th:each="md:${listMD}">
                         <br>
                         <input class="input_value" type="checkbox" th:value="${md.getName()}" th:text="${md.getName()}"
-                               th:field="*{midleDrink}"/>
+                               th:field="*{midleDrinks}"/>
                     </label>
                 </div>
             </div>
