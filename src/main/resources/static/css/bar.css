@@ -154,9 +154,11 @@ Not supports in Firefox and IE */
 
 /* scrollbar itself */
 .dropdown-content::-webkit-scrollbar-thumb {
-    background-color: #babac0;
-    border-radius: 16px;
-    border: 1px solid #fff;
+    /*background-color: #babac0;*/
+    /*border-radius: 16px;*/
+    /*border: 1px solid #fff;*/
+
+    background-color: (255, 255, 255, 0.0);
 }
 
 /* set button(top and bottom of the scrollbar) */
