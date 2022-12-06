@@ -1,12 +1,13 @@
 /*убирает полосы прокрутки*/
-/*html {*/
-/*    overflow: hidden;*/
-/*}*/
+html {
+    overflow: hidden;
+}
 
 body {
     background-image: url("../bg-reg.jpg");
     background-size: cover;
 }
+
 * {
     box-sizing: border-box
 }
@@ -31,16 +32,16 @@ form {
     background-color: #fefefe;
     margin: 5% auto 5% auto;
     /* 5% сверху, 5% снизу и по центру */
-    border: 1px solid #888;
-    max-width: 80%;
-    max-height: 80%;
+    /* border: 1px solid #888; */
+    max-width: 85%;
 
+    /* max-height: 100vh; */
 
     /* Может быть больше или меньше, в зависимости от размера экрана */
 }
 
 #form_name {
-    width: 40%;
+    width: 45%;
     display: block;
 }
 
@@ -49,12 +50,19 @@ form {
     display: block;
 }
 
-#form_pass, #form_pass_rep {
+#form_pass {
+    width: 55%;
+    display: block;
+}
+
+#form_pass_rep {
     width: 60%;
     display: block;
 }
 
-h1, label, p {
+h1,
+label,
+p {
     color: white;
 }
 
@@ -67,24 +75,24 @@ input[type=password]:focus {
 
 /* Установите стиль для всех кнопок */
 button {
-    /*располож. по середин кнопки*/
-    /*position: relative;*/
-    /*left: 50%;*/
-    /*transform: translate(-50%, 0);*/
+    /* располож. по середин кнопки*/
+    position: relative;
+    left: 55vh;
+    transform: translate(-50%, 0);
 
     background-color: #B8A488;
     color: white;
-    padding: 15px 15px;
+    /* padding: 15px 15px; */
     /* margin: 10px 0; */
     border: 1px solid white;
     border-radius: 5px;
     cursor: pointer;
-    width: 70%;
+    /* width: 70%; */
     opacity: 0.9;
 }
 
 button:hover {
-    background-color: #7e0a6c;
+    background-color: #9b8b74;
     opacity: 0.9;
 }
 
@@ -142,7 +150,7 @@ button:hover {
     /* Полная ширина */
     height: 90%;
     /* Полный высота */
-    overflow: auto;
+    overflow: hidden;
     /* Включите прокрутку, если это необходимо */
     /*background-color: #474e5d;*/
     /* padding-top: 50px; */
@@ -152,9 +160,7 @@ button:hover {
 }
 
 /* Модальное Содержание/Бокс */
-.modal-content {
-
-}
+.modal-content {}
 
 /* кнопка закрытия (x) */
 /*.close {*/
@@ -230,4 +236,23 @@ button:hover {
     bottom: 0;
 }
 
+.signup {
 
+    z-index: 5;
+
+    height: 8vh;
+    width: 40vh;
+
+}
+
+.login {
+    z-index: 5;
+
+    height: 8vh;
+    width: 40vh;
+}
+
+.sp {
+    color: white;
+    font-size: 5vh;
+}

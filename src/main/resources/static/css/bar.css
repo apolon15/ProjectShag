@@ -2,6 +2,7 @@
 html {
     overflow: hidden;
 }
+
 /* <!-- ////////////////////////////////////////////////////////////////////////// --> */
 /* <!-- BG Main !!!!! --> */
 .bg {
@@ -15,6 +16,7 @@ html {
     object-fit: cover;
     z-index: 0;
 }
+
 .bg_inside {
     position: absolute;
     top: 0;
@@ -26,6 +28,7 @@ html {
     /* для ровной картинки */
     z-index: 0;
 }
+
 /* <!-- ////////////////////////////////////////////////////////////////////////// --> */
 /* <!-- Registration button !!!!! --> */
 .registration_button {
@@ -41,6 +44,7 @@ html {
     border: 0;
     z-index: 1;
 }
+
 /* <!-- ////////////////////////////////////////////////////////////////////////// --> */
 /* <!-- Left side !!!!! --> */
 nav {
@@ -49,13 +53,16 @@ nav {
     height: 100%;
     z-index: 1;
 }
-h4{
+
+h4 {
     color: white;
 }
+
 .user_info {
     margin: 0;
 
 }
+
 /* <!-- ////////////////////////////////////////////////////////////////////////// --> */
 /* <!-- Rigth side !!!!! --> */
 aside {
@@ -66,6 +73,7 @@ aside {
     height: 100%;
     z-index: 1;
 }
+
 .rigth_font {
     margin-left: 2vh;
     color: white;
@@ -73,6 +81,7 @@ aside {
     text-align: center;
     z-index: 1;
 }
+
 /* <!-- ////////////////////////////////////////////////////////////////////////// --> */
 /* <!-- Content !!!!! --> */
 .wrap {
@@ -82,10 +91,12 @@ aside {
     top: 15vh;
     left: 28vh;
 }
+
 /* Контейнер <div> - необходим для размещения выпадающего содержимого */
 .dropdown {
     margin-left: 16.2vh;
 }
+
 .dropbtn {
     width: 25vh;
     height: 10vh;
@@ -93,6 +104,7 @@ aside {
     border-radius: 5vh;
     background-color: rgba(255, 255, 255, 0.497);
 }
+
 /* Выпадающее содержимое (скрыто по умолчанию) */
 .dropdown-content {
     width: 25vh;
@@ -102,6 +114,8 @@ aside {
     position: absolute;
     color: white;
     background: linear-gradient(#00000000, transparent);
+
+    margin-left: 5vh;
 
     /* скролл лента */
     overflow-y: scroll;
@@ -116,8 +130,9 @@ aside {
 .dropdown:hover .dropbtn {
     background-color: rgba(255, 255, 255, 0.781);
 }
+
 /*что-бы напитки всегда писались в 1 строку*/
-label{
+label {
     display: block;
 }
 
@@ -148,6 +163,8 @@ Not supports in Firefox and IE */
 
 /* total width */
 .dropdown-content::-webkit-scrollbar {
+    /* == background-color: white;  opacity: 0.0;*/
+
     background-color: (255, 255, 255, 0.0);
     width: 1vh;
 }
