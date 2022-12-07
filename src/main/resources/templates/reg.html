@@ -24,7 +24,21 @@
 <!-- Модальный (содержит форму регистрации) -->
 <div id="id01" class="modal">
     <form class="modal-content" action="/save/user" method="post" th:action="@{/save/user}" th:object="${user}">
-        <h1>Форма регистрации</h1>
+
+        <div>
+
+            <span class="sp">Форма регистрации</span>
+
+            <button type="submit" onclick="validate()" class="signup">
+                <span>Регистрация</span>
+            </button>
+
+            <a th:href="@{../login}"><button type="button" class="login">
+                <span>Уже зарегистрирован. Вход</span>
+            </button>
+            </a>
+
+        </div>
         <p>Пожалуйста, заполните эту форму, чтобы создать учетную запись.</p>
         <label><b>Ваше имя</b></label>
         <input id="form_name" th:field=*{username} type="text" placeholder="Введите ваш ник" required
@@ -42,10 +56,7 @@
                oninvalid="this.setCustomValidity('Вы не указали пароль')" oninput="this.setCustomValidity(``)">
         <p>Создавая учетную запись, вы соглашаетесь с нашим <a href="#" style="color:dodgerblue">Условия и
             конфиденциальность</a>.</p>
-        <button type="submit" onclick="validate()" class="signup"><h3>Регистрация</h3></button>
-        <a th:href="@{../login}">
-            <button type="button" class="login"><h3>Уже зарегистрирован. Вход</h3></button>
-        </a>
+
     </form>
 </div>
 <script th:inline="javascript"></script>
