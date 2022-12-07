@@ -22,9 +22,10 @@
 
 <body>
 <!-- Registration button !!!!! -->
-<header >
-    <form   method="get" th:action="@{/reg}" th:object="${user}" id="test" >
-        <button class="registration_button" id="button_Re_change" type="submit" onclick="TEST()"><span id="button_text_change"></span></button>
+<header>
+    <form method="get" th:action="@{/reg}" th:object="${user}" id="test">
+        <button class="registration_button" id="button_Re_change" type="submit" onclick="TEST()"><span
+                id="button_text_change"></span></button>
     </form>
 </header>
 <!-- Left side !!!!! -->
@@ -37,8 +38,16 @@
 </nav>
 <!-- Rigth side !!!!! -->
 <aside>
-    <br><br><br><br><br><br><br><br><br><br>
-    <span class="rigth_font">Сюда должен выводиться рецепт</span>
+    <label th:each="listC:${listCocktails}">
+        <br>
+        <form method="post" th:action="@{/get_cocktail/(id=${listC.getId()})}">
+            <button type="submit" th:value="${listC.getId}"
+                    th:text="${listC.getName()}"></button>
+        </form>
+    </label>
+
+    <!--    <br><br><br><br><br><br><br><br><br><br>-->
+    <!--    <span class="rigth_font">Сюда должен выводиться рецепт</span>-->
 </aside>
 <!-- Images !!!!! -->
 <main>
@@ -49,50 +58,49 @@
 
 <!-- Content !!!!! -->
 <content>
-    <div class="wrap">
-
-        <!-- ////////////////////////////////////////////////////////////////////////// -->
-
-        <div class="dropdown">
-            <button class="dropbtn">Крепкие напитки</button>
-            <div class="dropdown-content">
-                <label th:each="sd:${listSD}">
-                    <br>
-                    <input type="checkbox" th:text="${sd.getName()}" class="test1"/>
-                </label>
+    <form id="test01" method="post" th:action="@{/create_cocktails}" th:object="${cocktail}">
+        <div th:object="${userDto}"></div>
+        <div class="wrap">
+            <!-- ////////////////////////////////////////////////////////////////////////// -->
+            <div class="dropdown">
+                <button class="dropbtn" type="button">Крепкие напитки</button>
+                <div class="dropdown-content">
+                    <label th:each="sd:${listSD}">
+                        <br>
+                        <input class="input_value" type="checkbox" th:value="${sd.getName()}"
+                               th:text="${sd.getName()}" th:field="*{strongDrinks}"/>
+                    </label>
+                </div>
             </div>
-        </div>
-        <!-- ////////////////////////////////////////////////////////////////////////// -->
-
-        <div class="dropdown">
-            <button class="dropbtn">Воды и соки</button>
-            <div class="dropdown-content">
-                <label th:each="ld:${listLD}">
-                    <br>
-                    <input type="checkbox" th:text="${ld.getName()}"/>
-                </label>
+            <!-- ////////////////////////////////////////////////////////////////////////// -->
+            <div class="dropdown">
+                <button class="dropbtn" type="button">Воды и соки</button>
+                <div class="dropdown-content">
+                    <label th:each="ld:${listLD}">
+                        <br>
+                        <input class="input_value" type="checkbox" th:value="${ld.getName()}"
+                               th:text="${ld.getName()}" th:field="*{lightDrinks}"/>
+                    </label>
+                </div>
             </div>
-        </div>
-
-        <!-- ////////////////////////////////////////////////////////////////////////// -->
-
-        <form id="test01" method="post" th:action="@{/create_cocktails}">
+            <!-- ////////////////////////////////////////////////////////////////////////// -->
             <div class="dropdown">
                 <button type="button" class="dropbtn">Сиропы</button>
                 <div class="dropdown-content">
                     <label th:each="md:${listMD}">
                         <br>
-                        <input type="checkbox" th:text="${md.getName()}" th:value="${check}"/>
+                        <input class="input_value" type="checkbox" th:value="${md.getName()}" th:text="${md.getName()}"
+                               th:field="*{midleDrinks}"/>
                     </label>
                 </div>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
 </content>
 
 <!-- Footer !!!!! -->
 <footer>
-    <button type="button" form="test01" class="shake_button"><span>CREATE COCKTAIL</span></button>
+    <button type="submit" form="test01" class="shake_button"><span>CREATE COCKTAIL</span></button>
 </footer>
 
 <!--<script src="../static/js/bar_script.js"></script>-->

@@ -28,11 +28,7 @@
         <label><b>Пароль</b></label>
         <input name="password" id="form_pass" type="password" placeholder="Введите пароль" required
                oninvalid="this.setCustomValidity('Вы не указали пароль')" oninput="this.setCustomValidity(``)">
-
-        <!--        <label>-->
-        <!--            <input type="checkbox" checked="checked" name="remember"> Запомнить меня-->
-        <!--        </label>-->
-        <div th:if="${error}"  th:text="${Неправильное имя или пароль}"style="color:red"></div>
+        <div th:if="${param.error}"  style="color:red; font-size: xx-large">Не верно имя или пароль</div>
         <button type="submit" class="signup"><h3>Войти</h3></button>
     </form>
 </div>

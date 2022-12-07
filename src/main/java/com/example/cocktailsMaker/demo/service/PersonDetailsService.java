@@ -8,26 +8,23 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.Errors;
 
 import java.util.Objects;
 import java.util.Optional;
 
 @Service
 public class PersonDetailsService implements UserDetailsService {
-
     private final UserRepository userRepository;
-
     @Autowired
     public PersonDetailsService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-
-
     @Override
     public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
-        User user = userRepository.findUserByName(name).orElse(null);
+        User user = userRepository.findUserByUsername(name).orElse(null);
         if (Objects.isNull(user)) {
-            throw new UsernameNotFoundException("Такого нет в базе");
+            throw new UsernameNotFoundException( "Такого нет в базе");
         }
         return new PersonDetails(user);
     }

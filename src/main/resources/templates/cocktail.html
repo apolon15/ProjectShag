@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeaLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Рецепт коктейля</title>
+    <link type="text/css" rel="stylesheet" href="../static/css/cocktail.css" th:href="@{/css/cocktail.css}"/>
+</head>
+<body>
+<div>
+    <label th:object="${cocktail}">
+        <h3 th:text="${cocktail.getName()}"></h3>
+        <p th:text="${cocktail.getDescription()}"></p>
+    </label>
+    <form th:action="@{/login/user}">
+            <button th:formmethod="get"  th:value="${name_top}" th:type="submit">НАЗАД</button>
+    </form>
+
+    <div></div>
+</div>
+
+</body>
+</html>
