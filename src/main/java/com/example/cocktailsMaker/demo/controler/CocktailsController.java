@@ -39,9 +39,25 @@ public class CocktailsController {
 
     @PostMapping("/get_cocktail")
     public String getCocktail(@RequestParam Integer id, Model model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (!(authentication instanceof AnonymousAuthenticationToken)) {
+            UsernamePasswordAuthenticationToken uToken = new UsernamePasswordAuthenticationToken(authentication.getPrincipal(), authentication.getCredentials());
+            model.addAttribute("name_top", authentication.getName());
+        }
        Cocktail cocktail=cocktailService.findCocktailById(id);
         model.addAttribute("cocktail", cocktail);
         return "cocktail";
+    }
+
+    @GetMapping("/back")
+    public String getBack(Model model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        model.addAttribute("name_top", "");
+        if (!(authentication instanceof AnonymousAuthenticationToken)) {
+            UsernamePasswordAuthenticationToken uToken = new UsernamePasswordAuthenticationToken(authentication.getPrincipal(), authentication.getCredentials());
+            model.addAttribute("name_top", authentication.getName());
+        }
+        return "bar";
     }
 
 }

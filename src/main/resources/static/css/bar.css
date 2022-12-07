@@ -165,7 +165,7 @@ Not supports in Firefox and IE */
 .dropdown-content::-webkit-scrollbar {
     /* == background-color: white;  opacity: 0.0;*/
 
-    background-color: (255, 255, 255, 0.0);
+    background-color: (255,255,255, 0.0);
     width: 1vh;
 }
 

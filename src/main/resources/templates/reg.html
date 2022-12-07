@@ -24,20 +24,15 @@
 <!-- Модальный (содержит форму регистрации) -->
 <div id="id01" class="modal">
     <form class="modal-content" action="/save/user" method="post" th:action="@{/save/user}" th:object="${user}">
-
         <div>
-
             <span class="sp">Форма регистрации</span>
-
             <button type="submit" onclick="validate()" class="signup">
                 <span>Регистрация</span>
             </button>
-
             <a th:href="@{../login}"><button type="button" class="login">
                 <span>Уже зарегистрирован. Вход</span>
             </button>
             </a>
-
         </div>
         <p>Пожалуйста, заполните эту форму, чтобы создать учетную запись.</p>
         <label><b>Ваше имя</b></label>

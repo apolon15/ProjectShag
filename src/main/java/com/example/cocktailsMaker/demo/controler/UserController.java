@@ -49,13 +49,10 @@ public class UserController {
 
     @GetMapping("/login/user")
     public String loginUser(@ModelAttribute("cocktail") CocktailDto cocktailDto, Model model) {
-//        User user = userService.saveUser(userDto);
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         PersonDetails personDetails = (PersonDetails) authentication.getPrincipal();
         model.addAttribute("name_top", personDetails.getUsername());
         cocktailService.getPageBar(model);
-//        return "redirect:/save/user/" + user.getId();
-
         return "/bar";
     }
 

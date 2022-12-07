@@ -6,10 +6,15 @@
     <link type="text/css" rel="stylesheet" href="../static/css/cocktail.css" th:href="@{/css/cocktail.css}"/>
 </head>
 <body>
-<label th:object="${cocktail}">
-    <h3 th:text="${cocktail.getName()}"></h3>
-    <p th:text="${cocktail.getDescription()}"></p>
-</label>
+<div>
+    <label th:object="${cocktail}">
+        <h3 th:text="${cocktail.getName()}"></h3>
+        <p th:text="${cocktail.getDescription()}"></p>
+    </label>
+    <form th:action="@{/back}">
+            <button th:formmethod="get"  th:value="${name_top}" th:type="submit">НАЗАД</button>
+    </form>
+</div>
 
 </body>
 </html>
