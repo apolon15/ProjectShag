@@ -8,6 +8,7 @@ import com.example.cocktailsMaker.demo.service.CocktailService;
 import com.example.cocktailsMaker.demo.service.UserService;
 import com.example.cocktailsMaker.demo.util.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -50,8 +51,12 @@ public class UserController {
     @GetMapping("/login/user")
     public String loginUser(@ModelAttribute("cocktail") CocktailDto cocktailDto, Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        PersonDetails personDetails = (PersonDetails) authentication.getPrincipal();
-        model.addAttribute("name_top", personDetails.getUsername());
+        if (!(authentication instanceof AnonymousAuthenticationToken)) {
+            PersonDetails personDetails = (PersonDetails) authentication.getPrincipal();
+            model.addAttribute("name_top", personDetails.getUsername());
+        } else {
+            model.addAttribute("name_top", "");
+        }
         cocktailService.getPageBar(model);
         return "/bar";
     }

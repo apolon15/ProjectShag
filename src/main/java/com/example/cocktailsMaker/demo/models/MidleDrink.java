@@ -16,7 +16,6 @@ public class MidleDrink {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
-
     private Integer id;
     private String name;
 
