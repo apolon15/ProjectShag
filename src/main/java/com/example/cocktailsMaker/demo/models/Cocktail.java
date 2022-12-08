@@ -19,6 +19,7 @@ public class Cocktail {
     private String name;
     private String structure;
     private String description;
+    private String link;
 
 
 //    @ManyToOne

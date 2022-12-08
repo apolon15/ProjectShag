@@ -10,12 +10,19 @@
     <label th:object="${cocktail}">
         <h3 th:text="${cocktail.getName()}"></h3>
         <p th:text="${cocktail.getDescription()}"></p>
+
+        <iframe width="560" height="315" th:src="${cocktail.getLink()}" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+        </iframe>
+
     </label>
     <form th:action="@{/login/user}">
-            <button th:formmethod="get"  th:value="${name_top}" th:type="submit">НАЗАД</button>
+        <button th:formmethod="get" th:value="${name_top}" th:type="submit">НАЗАД</button>
     </form>
 
-    <div></div>
+
 </div>
 
 </body>
