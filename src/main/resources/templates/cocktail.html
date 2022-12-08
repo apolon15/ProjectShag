@@ -6,20 +6,20 @@
     <link type="text/css" rel="stylesheet" href="../static/css/cocktail.css" th:href="@{/css/cocktail.css}"/>
 </head>
 <body>
-<div>
-    <label th:object="${cocktail}">
-        <h3 th:text="${cocktail.getName()}"></h3>
+<div clas="main">
+    <div><label th:object="${cocktail}">
+        <h1 th:text="${cocktail.getName()}"></h1>
         <p th:text="${cocktail.getDescription()}"></p>
 
-        <iframe width="560" height="315" th:src="${cocktail.getLink()}" title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-        </iframe>
+    <iframe width="560" height="315" th:src="${cocktail.getLink()}" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+    </iframe>
 
     </label>
     <form th:action="@{/login/user}">
-        <button th:formmethod="get" th:value="${name_top}" th:type="submit">НАЗАД</button>
+        <button th:formmethod="get" th:value="${name_top}" th:type="submit"><h3>НАЗАД</h3></button>
     </form>
 
 
