@@ -1,6 +1,10 @@
-body{
+body{align-content: center;
     background-image: url("../bar_Board.jpg");
 }
-p,h3{
+p,h1,label,div{
     color: white;
+    text-align: center;
+}
+button{
+    border-radius: 10px;
 }
