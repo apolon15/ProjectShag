@@ -4,14 +4,23 @@
 
 Для примера команды заполнить БД:
 INSERT INTO light_drink (id,name) VALUES (1,'вода');
+
 INSERT INTO light_drink (id,name) VALUES (2,'кола');
+
 INSERT INTO light_drink (id,name) VALUES (3,'апельсиновый сок');
+
 INSERT INTO light_drink (id,name) VALUES (4,'содовая');
+
 INSERT INTO light_drink (id,name) VALUES (5,'лаймовый сок');
+
 INSERT INTO light_drink (id,name) VALUES (6,'сахарный сироп');
+
 INSERT INTO light_drink (id,name) VALUES (7,'гренадин');
+
 INSERT INTO light_drink (id,name) VALUES (8,'тоник');
+
 INSERT INTO light_drink (id,name) VALUES (9,'яблочный сок');
+
 INSERT INTO light_drink (id,name) VALUES (10,'лимонный сок');
 
 INSERT INTO midle_drink (id, name) VALUES (1,'лайм');
